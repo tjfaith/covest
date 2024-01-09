@@ -1,27 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@import 'animate.css/animate.css';
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --gradient: #F0F2F0;
+
+    --background: 128 4.550000000000001% 7.6%;
+    --foreground: 128 0.7000000000000001% 99.75%;
+
+    --muted: 128 3.5000000000000004% 28.5%;
+    --muted-foreground: 128 0.7000000000000001% 59.5%;
+
+    --popover: 128 63.6% 12.35%;
+    --popover-foreground: 128 0.7000000000000001% 99.75%;
+
+    --card: 128 63.6% 12.35%;
+    --card-foreground: 128 0.7000000000000001% 99.75%;
+
+    --border: 128 3.5000000000000004% 28.5%;
+    --input: 128 3.5000000000000004% 28.5%;
+
+    --primary: 128 7% 95%;
+    --primary-foreground: 128 0.7000000000000001% 9.5%;
+
+    --secondary: 128 3.5000000000000004% 28.5%;
+    --secondary-foreground: 128 0.7000000000000001% 99.75%;
+
+    --accent: 128 3.5000000000000004% 28.5%;
+    --accent-foreground: 128 0.7000000000000001% 99.75%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 128 0.7000000000000001% 99.75%;
+
+    --ring: 128 7% 95%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Styling the main scrollbar */
+::-webkit-scrollbar {
+  width: 12px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: white; 
+  border: 2px solid #472f0c;
+  border-radius: 8px; 
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); 
+}
+
+.xscroll::-webkit-scrollbar {
+  height: 3px; 
 }
