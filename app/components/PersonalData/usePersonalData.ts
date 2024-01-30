@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import {  useDispatch } from "react-redux";
 import { updateActivePage } from "@/app/Store/Features/settingsSlice";
 
 function usePersonalData() {
