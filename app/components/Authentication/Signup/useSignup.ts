@@ -61,7 +61,7 @@ function useSignup() {
 
   useEffect(() => {
     resetValidation();
-  }, [loginDetails]);
+  }, [loginDetails, resetValidation]);
 
   return {
     loginDetails,

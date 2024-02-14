@@ -7,7 +7,7 @@ export { default as Signup } from "./Authentication/Signup";
 export { default as SocialLogin } from "./Authentication/SocialLogin";
 export { default as SideBar } from "./SideBar";
 export { default as TopBar } from "./TopBar";
-export { default as PersonalData } from "./TopBar";
+export { default as PersonalData } from "./PersonalData";
 
 // Home Component
 export { default as HomePage } from "./HomeComponents";
