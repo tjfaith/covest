@@ -2,13 +2,20 @@
 import { LandPlot, LayoutDashboard, Pyramid, Users } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import { RootState } from "@/app/Store";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
+import { toggleSideBar } from "@/app/Store/Features/settingsSlice";
+import { useDispatch } from "react-redux";
 
 function useSidebar() {
-  const activePage = useSelector(
-    (state: RootState) => state.settings.activePage
+  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const {activePage, showSideBar} = useSelector(
+    (state: RootState) => state.settings
   );
+  
 
   const [confirmLogout, setConfirmLogout] = useState(false)
   const navMenu: Record<string, string | LucideIcon>[] = [
@@ -37,7 +44,19 @@ function useSidebar() {
       route_to: "/dashboard/referrals ",
     },
   ];
-  return { navMenu, activePage, confirmLogout, setConfirmLogout };
+  const handleChangePage=(route_to:string)=>{
+    router.push(route_to);
+  }
+  
+  const hideMenu = ()=>{
+   dispatch(toggleSideBar(false));
+
+ }
+  const handleLogout=()=>{
+    router.push('/');
+  }
+
+  return { navMenu, activePage, confirmLogout,showSideBar, hideMenu, handleChangePage,handleLogout, setConfirmLogout };
 }
 
 export default useSidebar;

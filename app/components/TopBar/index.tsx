@@ -1,11 +1,14 @@
 "use client";
 import React from "react";
-import { CustomInput } from "@/app/components";
-import { Mail, MailPlus, Search, ShoppingCart } from "lucide-react";
+import { CustomButton, CustomInput } from "@/app/components";
+import { Mail, MailPlus, Menu, Search, ShoppingCart } from "lucide-react";
+import useTopBar from "./useTopBar";
 
 const TopBar = () => {
+  const {showSideBar} = useTopBar()
   return (
-    <div className="flex gap-2 items-center w-full mb-5">
+    <div className="flex gap-2 items-center mb-5  w-full">
+      <div className="w-10 lg:hidden flex items-center justify-center bg-secondary text-primary rounded-lg p-2" onClick={showSideBar}><Menu className="h-5 w-5  " /></div>
       <form className="w-full">
         <CustomInput
           error={false}

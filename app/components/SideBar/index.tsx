@@ -8,19 +8,33 @@ import Link from "next/link";
 import { ConfirmAlert } from "@/app/components";
 
 const SideBar = () => {
-  const { navMenu, activePage, confirmLogout, setConfirmLogout } = useSidebar();
+  const {
+    navMenu,
+    activePage,
+    confirmLogout,
+    showSideBar,
+    hideMenu,
+    handleChangePage,
+    handleLogout,
+    setConfirmLogout,
+  } = useSidebar();
   return (
-    <>
+    <div className={`${showSideBar?'bg-yellow-300/20 inset-0 z-10 w-full fixed':'hidden lg:flex'} `} onClick={hideMenu}>
       {confirmLogout && (
         <ConfirmAlert
           title={"Logout?"}
           description={"Are you sure you want to logout"}
           confirmBtnText={"Yes"}
-          confirmFunction={() => setConfirmLogout(false)}
+          confirmFunction={handleLogout}
           setShowConfirm={() => setConfirmLogout(false)}
         />
       )}
-      <div className="h-screen w-72 bg-secondary flex flex-col fixed pb-10 ">
+
+      <div
+        className={`${
+          showSideBar ? "flex" : "hidden lg:flex"
+        } h-screen w-60 md:w-72 bg-secondary  flex-col fixed pb-10 z-20   animate__animated animate__slideInLeft`}
+      >
         <div className="flex items-center font-bold space-x-3 text-xl p-5   ">
           <Image
             src={"/logo.png"}
@@ -43,8 +57,8 @@ const SideBar = () => {
                     }  w-1 h-5 rounded-r-md`}
                   ></div>
 
-                  <Link
-                    href={val.route_to as string}
+                  <div
+                    onClick={() => handleChangePage(val.route_to as string)}
                     className={`${
                       activePage === val.id
                         ? "bg-primary/50 text-secondary animate__animated animate__headShake shadow-lg"
@@ -53,7 +67,7 @@ const SideBar = () => {
                   >
                     {<val.icon className="w-4 h-4" />}
                     <span>{val.label as string}</span>
-                  </Link>
+                  </div>
                 </li>
               )
             )}
@@ -95,7 +109,7 @@ const SideBar = () => {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

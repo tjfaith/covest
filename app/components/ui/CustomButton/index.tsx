@@ -22,7 +22,7 @@ const CustomButton = ({
           <span>{label}</span>
         </>
       ) : (
-        <Loader />
+        <Loader size={30} />
       )}
     </button>
   );

@@ -9,7 +9,7 @@ import { Authentication } from "@/app/components";
 const Header = () => {
   const { showAuthentication, setShowAuthentication } = useHeader();
   return (
-    <div className="flex justify-between items-center px-32 py-4 fixed w-full text-secondary bg-primary z-20">
+    <div className="flex justify-between gap-10 md:gap-0 items-center px-5 lg:px-32 py-4 fixed w-full text-secondary bg-primary z-20">
       <div className="flex items-center font-bold space-x-3 text-xl  ">
         <Image
           src={"/logo.png"}
@@ -21,10 +21,10 @@ const Header = () => {
         <div>COvest</div>
       </div>
       <button
-        className="bg-secondary text-primary flex item-center space-x-3 p-2  border-2 cursor-pointer"
+        className="bg-secondary text-primary flex items-center  space-x-3 p-2  border-2 cursor-pointer"
         onClick={() => setShowAuthentication(true)}
       >
-        <span>Start Investing</span> <ArrowRight />
+        <span className="text-xs md:text-base">Start&nbsp;Investing</span> <ArrowRight />
       </button>
       {showAuthentication && (
         <Authentication setShowAuthentication={setShowAuthentication} />

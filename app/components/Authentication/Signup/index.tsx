@@ -62,7 +62,7 @@ const Signup = ({ setShowLogin }: SignupProps) => {
           setLoginDetails({ ...loginDetails, password: value })
         }
       />
-      <div className=" flex justify-between items-center text-sm font-medium space-x-3">
+          <div className=" flex md:flex-nowrap flex-wrap justify-between md:items-center text-sm font-medium gap-3">
         <div className="flex items-center justify-between space-x-2">
           <input
             className="bg-secondary border text-primary  rounded w-4 h-4  checked:bg-primary checked:border-primary checked:bg-no-repeat checked:bg-center"

@@ -31,7 +31,7 @@ const Dashboard = () => {
         </div>
       </div>
       {/* <hr className="border-t border-muted-foreground" /> */}
-      <div className=" flex gap-4 items-center justify-between mt-10 overflow-hidden">
+      <div className=" flex flex-wrap gap-4 items-center justify-between mt-10 overflow-hidden">
         <div className="animate__animated animate__fadeInRight animate__slow relative overflow-hidden inline-flex items-center bg-secondary/50 text-primary rounded-lg p-2 flex-grow h-26">
           <div className="bg-secondary p-3 rounded-lg h-full w-1/3 text-2xl flex items-center justify-center font-extrabold">
             500
@@ -63,8 +63,8 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="flex items-center mt-10 gap-4">
-        <div className="bg-foreground p-5 rounded-xl flex items-center justify-between  ">
+      <div className="flex md:flex-row flex-col items-center mt-10 gap-4">
+        <div className="bg-foreground p-5 rounded-xl flex md:items-center md:flex-row flex-col gap-3 justify-between  ">
           <div>
             <span className="text-4xl font-extrabold text-secondary">
               With this LandBanking offer

@@ -12,9 +12,9 @@ interface AuthenticationProps {
 const Authentication = ({ setShowAuthentication }: AuthenticationProps) => {
   const [showLogin, setShowLogin] = useState(true);
   return (
-    <div className=" inset-0 bg-background/50 bg-opacity-10 backdrop-blur-lg z-20 animate__animated animate__fadeIn animate__faster flex justify-center items-center  fixed h-screen w-screen top-0 bottom-0 right-0 left-0">
-      <div className=" h-screen-70 w-70-screen bg-primary flex items-center">
-        <div className="flex-grow flex flex-col items-center space-y-8 w-1/2 p-10  h-full">
+    <div className=" inset-0 bg-background/50 bg-opacity-10 backdrop-blur-lg z-20 animate__animated animate__fadeIn animate__faster flex justify-center px-5 items-center  fixed h-screen w-screen top-0 bottom-0 right-0 left-0">
+      <div className="  min-h-70-screen  lg:w-70-screen bg-primary flex items-center">
+        <div className="flex-grow hidden lg:flex flex-col items-center w-1/2 p-10   h-full">
           <div className="text-secondary font-bold text-xl mb-8">
             Welcome to
           </div>
@@ -39,24 +39,26 @@ const Authentication = ({ setShowAuthentication }: AuthenticationProps) => {
             <span>+2348144141555</span>
           </small>
         </div>
-        <div className="flex-grow bg-secondary w-full h-full">
+        <div className=" min-h-70-screen flex-grow bg-secondary w-full h-full">
           <div className="flex items-center text-primary justify-between w-full pl-10 font-bold space-x-3 text-xl   px-5 pt-5">
-            <div className=" font-light">{ showLogin ? (<span>Login</span>):(<span>Signup</span>)}</div>
+            <div className=" font-light">
+              {showLogin ? <span>Login</span> : <span>Signup</span>}
+            </div>
             <XCircle
               onClick={() => setShowAuthentication(false)}
               className=" cursor-pointer hover:text-destructive hover:shadow-md hover:shadow-primary  rounded-full ease-in-out duration-150"
             />
           </div>
-          <div className=" px-10 h-screen-63 flex items-center justify-center  w-full">
+          <div className=" px-10 min-h-70-screen flex items-center justify-center pb-3 w-full">
             <div className="w-full">
               {showLogin ? (
                 <Login setShowLogin={setShowLogin} />
               ) : (
                 <Signup setShowLogin={setShowLogin} />
               )}
-              <div className="text-primary text-center w-full my-5">or</div>
+              <div className="text-primary text-center w-full my-2">or</div>
               <button className="bg-primary hover:bg-primary/50 hover:text-white transition-all ease-in-out duration-200 text-secondary font-bold py-2 px-4 w-full ">
-                Continue with Google
+                Continue&nbsp;with&nbsp;Google
               </button>
             </div>
           </div>

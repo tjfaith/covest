@@ -1,12 +1,17 @@
+"use client";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import { Authentication } from "@/app/components";
+import useBanner from "./useBanner";
 
 const Banner = () => {
+  const { showAuthentication, setShowAuthentication } = useBanner();
+
   return (
-    <div className="flex w-full bg-primary text-secondary pt-44 h-screen justify-between items-center px-32">
+    <div className=" overflow-x-hidden flex flex-col gap-5 md:flex-row w-full bg-primary text-secondary pt-24 lg:pt-44 h-screen justify-between items-center px-5 lg:px-32">
       <div>
-        <h1 className=" text-6xl w-7/12  font-bold ">
+        <h1 className=" text-2xl lg:text-6xl w-full lg:w-7/12  font-bold ">
           <span className="text-card animate__animated animate__fadeInDown animate__slow">
             Real Estate
           </span>
@@ -14,11 +19,15 @@ const Banner = () => {
             Investment Never Get any Easier Than This
           </div>
         </h1>
-        <p className=" text-2xl mt-10 font-bold w-8/12">
+        <p className=" lg:text-2xl mt-5 lg:mt-10 font-bold w-8/12">
           Choose from our wide range of estate collection and start investing
         </p>
-        <button className="bg-secondary text-primary mt-4 flex item-center space-x-3 p-2 rounded-lg border-2">
-          <span>Start Investing</span> <ArrowRight />
+        <button
+          className="bg-secondary text-primary mt-4 flex items-center space-x-3 p-2  border-2"
+          onClick={() => setShowAuthentication(true)}
+        >
+          <span className="text-xs md:text-base">Start Investing</span>{" "}
+          <ArrowRight />
         </button>
       </div>
       <Image
@@ -52,6 +61,9 @@ const Banner = () => {
           />
         </div>
       </div>
+      {showAuthentication && (
+        <Authentication setShowAuthentication={setShowAuthentication} />
+      )}
     </div>
   );
 };

@@ -52,7 +52,7 @@ const Login = ({ setShowLogin }: LoginProps) => {
           setLoginDetails({ ...loginDetails, password: value })
         }
       />
-      <div className=" flex justify-between items-center text-sm font-medium space-x-3">
+      <div className=" flex md:flex-nowrap flex-wrap justify-between md:items-center text-sm font-medium gap-3">
         <div className="flex items-center justify-between space-x-2">
           <input
             className="bg-secondary border text-primary  rounded w-4 h-4  checked:bg-primary checked:border-primary checked:bg-no-repeat checked:bg-center"
@@ -69,7 +69,7 @@ const Login = ({ setShowLogin }: LoginProps) => {
           Forgot Password?
         </Link>
       </div>
-      <div className="flex item-center justify-between gap-3">
+      <div className="flex md:flex-row flex-col item-center justify-between gap-3">
         <CustomButton
           showLoading={loading}
           label={"Login"}
@@ -78,7 +78,6 @@ const Login = ({ setShowLogin }: LoginProps) => {
           handleClick={() => {}}
         />
         <CustomButton
-          showLoading={loading}
           label={"signup"}
           type="button"
           bgColor="bg-foreground/50"

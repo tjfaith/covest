@@ -1,7 +1,8 @@
 'use client'
 import { useEffect, useState } from "react";
-
+import { useRouter } from 'next/navigation'
 function useLogin() {
+  const router = useRouter();
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [isChecked, setIsChecked] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -55,6 +56,7 @@ function useLogin() {
     e.preventDefault();
     if (handleValidation()) {
       setLoading(true);
+      router.push('/dashboard');
     }
   };
 

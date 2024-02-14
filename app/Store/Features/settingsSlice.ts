@@ -3,11 +3,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface SettingsState {
   activePage: String;
+  showSideBar:Boolean
 }
 
 
 const initialState: SettingsState = {
   activePage: "",
+  showSideBar:false,
 };
 
 const settingsSlice = createSlice({
@@ -17,8 +19,11 @@ const settingsSlice = createSlice({
     updateActivePage: (state, action: PayloadAction<String>) => {
       state.activePage = action.payload;
     },
+    toggleSideBar:(state, action: PayloadAction<Boolean>) => {
+      state.showSideBar = action.payload;
+    },
   },
 });
 
-export const { updateActivePage } = settingsSlice.actions;
+export const { updateActivePage, toggleSideBar } = settingsSlice.actions;
 export default settingsSlice.reducer;

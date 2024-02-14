@@ -1,4 +1,14 @@
+'use client'
+import { toggleSideBar } from "@/app/Store/Features/settingsSlice";
+import { useDispatch } from "react-redux";
+
 function useTopBar(){
-    return{}
+    const dispatch = useDispatch();
+
+    const showSideBar=()=>{
+        dispatch(toggleSideBar(true));
+    }
+
+    return{showSideBar}
 }
 export default useTopBar;
