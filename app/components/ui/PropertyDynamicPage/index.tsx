@@ -13,9 +13,9 @@ const PropertyDynamicPage = () => {
   const { images, details } = useDynamicPage();
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex justify-between gap-10">
-        <div className="w-4/12 h-screen-50">
+    <div className=" ">
+      <div className="flex w-full justify-between md:flex-row flex-col md:gap-10">
+        <div className="md:w-4/12 mb-5 ">
           <h1 className="text-3xl font-bold mb-4">4 bed room flat</h1>
           <ImageGallery
             items={images}
@@ -25,7 +25,7 @@ const PropertyDynamicPage = () => {
           />
         </div>
 
-        <div className="w-8/12">
+        <div className="md:w-8/12">
           <h2 className="text-lg font-bold mb-2">Item Description</h2>
           <p className="text-gray-700 text-justify">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint sed
@@ -40,7 +40,7 @@ const PropertyDynamicPage = () => {
             dolorum magnam. Esse! repudiandae veniam facere dolorum magnam.
             Esse!
           </p>
-          <div className="flex justify-between">
+          <div className="flex md:flex-row flex-col justify-between">
             <div className="text-sm mt-5">
               <div className="flex items-center">
                 <Tag className="h-5" /> Asking
@@ -50,7 +50,7 @@ const PropertyDynamicPage = () => {
                 &#8358;5,000,000.00
               </span>
             </div>
-            <div className="mt-2 inline-block self-end">
+            <div className="mt-2 inline-block md:self-end">
               <CustomButton
                 label={"PURCHASE PROPERTY"}
                 handleClick={() => {}}
@@ -60,7 +60,7 @@ const PropertyDynamicPage = () => {
         </div>
       </div>
 
-      <div className="flex gap-10">
+      <div className="flex gap-10 md:flex-nowrap flex-wrap-reverse mt-5">
         <div className="w-1/2 space-y-2 flex-grow">
           <h1 className="text-lg font-bold">Contact Retailor</h1>
           <div className="text-lg font-bold">

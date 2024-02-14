@@ -98,7 +98,7 @@ const Dashboard = () => {
       <div className="bg-gray-100 font-sans mt-5">
         <h1 className="text-lg font-bold mb-4">Recent Activity</h1>
 
-        {/* Activity Item 1 */}
+        Activity Item 1
         <div className="bg-blue-50 rounded p-2 shadow mb-2">
           <p className="text-blue-600 mb-1">New Property Listing:</p>
           <p className="text-blue-800 text-sm">
@@ -107,7 +107,7 @@ const Dashboard = () => {
           <p className="text-blue-500 text-xs mt-1">2 hours ago</p>
         </div>
 
-        {/* Activity Item 2 */}
+        Activity Item 2
         <div className="bg-green-50 rounded p-2 shadow mb-2">
           <p className="text-green-600 mb-1">Open House Reminder:</p>
           <p className="text-green-800 text-sm">
@@ -116,7 +116,7 @@ const Dashboard = () => {
           <p className="text-green-500 text-xs mt-1">4 hours ago</p>
         </div>
 
-        {/* Activity Item 3 */}
+        Activity Item 3
         <div className="bg-yellow-50 rounded p-2 shadow mb-2">
           <p className="text-yellow-600 mb-1">New Buyer Inquiry:</p>
           <p className="text-yellow-800 text-sm">

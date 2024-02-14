@@ -63,7 +63,7 @@ const SideBar = () => {
                       activePage === val.id
                         ? "bg-primary/50 text-secondary animate__animated animate__headShake shadow-lg"
                         : "bg-secondary text-primary hover:text-yellow-300 duration-300 transition-all"
-                    } px-2 flex items-center font-bold space-x-3  p-2 text-sm rounded-lg  w-full   `}
+                    } px-2 flex items-center font-bold space-x-3  p-2 text-sm rounded-lg  w-full cursor-pointer   `}
                   >
                     {<val.icon className="w-4 h-4" />}
                     <span>{val.label as string}</span>
@@ -88,7 +88,7 @@ const SideBar = () => {
                   activePage === "profile"
                     ? "bg-primary/50 text-secondary animate__animated animate__headShake"
                     : "bg-secondary text-primary"
-                } px-2 flex items-center font-bold space-x-3  p-2 text-sm rounded-lg  w-full`}
+                } px-2 flex items-center font-bold space-x-3  p-2 text-sm rounded-lg cursor-pointer   w-full`}
               >
                 <CircleUserRound className="w-4 h-4" />
                 <span>Profile</span>

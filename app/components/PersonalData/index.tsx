@@ -20,7 +20,7 @@ const Profile = () => {
     <div>
       <form onSubmit={handleSubmit}>
         {/* First Name */}
-        <div className="mb-4 flex items-center justify-between space-x-4">
+        <div className="mb-4 flex items-center md:flex-row flex-col justify-between gap-4">
           <CustomInput
             error={validateDetails?.firstName}
             icon={<Contact2 />}
@@ -53,7 +53,7 @@ const Profile = () => {
           />
         </div>
 
-        <div className="mb-4 flex items-center justify-between space-x-4">
+        <div className="mb-4 flex items-center justify-between md:flex-row flex-col gap-4">
           <CustomInput
             error={validateDetails?.email}
             icon={<AtSign />}
@@ -85,7 +85,7 @@ const Profile = () => {
             }
           />
         </div>
-        <div className="mb-4 flex items-center justify-between space-x-4">
+        <div className="mb-4 flex items-center justify-between md:flex-row flex-col gap-4">
           <CustomSelect
             data={gender}
             value={formData.gender}
@@ -111,7 +111,7 @@ const Profile = () => {
           />
         </div>
 
-        <div className="mb-4  flex items-center justify-between space-x-4">
+        <div className="mb-4  flex items-center justify-between md:flex-row flex-col gap-4">
           <CustomInput
             error={validateDetails?.dateOfBirth}
             icon={<CalendarDays />}
@@ -143,38 +143,6 @@ const Profile = () => {
           />
         </div>
 
-        <div className="mb-4 flex items-center justify-between space-x-4">
-          <CustomInput
-            error={validateDetails?.firstName}
-            icon={<Contact2 />}
-            label="First Name*"
-            placeholder="First name"
-            inputType="text"
-            labelColor="text-secondary"
-            bgColor="bg-foreground"
-            textColor="text-secondary"
-            borderColor="border-secondary"
-            value={formData.firstName}
-            handleChange={(value: string) =>
-              setFormData({ ...formData, firstName: value })
-            }
-          />
-          <CustomInput
-            error={validateDetails?.lastName}
-            icon={<Contact2 />}
-            label="Last Name*"
-            placeholder="Last name"
-            inputType="text"
-            labelColor="text-secondary"
-            bgColor="bg-foreground"
-            textColor="text-secondary"
-            borderColor="border-secondary"
-            value={formData.lastName}
-            handleChange={(value: string) =>
-              setFormData({ ...formData, lastName: value })
-            }
-          />
-        </div>
 
         <div className="mt-6 inline-block">
           <CustomButton

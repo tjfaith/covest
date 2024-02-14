@@ -4,10 +4,10 @@ import { SideBar, TopBar } from "@/app/components";
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex bg-primary">
-      <div className="h-screen lg:w-80  ">
+      <div className="h-screen lg:w-72  ">
         <SideBar />
       </div>
-      <div className=" text-secondary p-5 lg:px-16 py-5 w-full ">
+      <div className=" text-secondary p-5 lg:px-10 py-5">
         <TopBar/>
         {children}
         </div>

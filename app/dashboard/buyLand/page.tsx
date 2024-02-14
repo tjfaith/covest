@@ -17,7 +17,7 @@ const BuyLand = () => {
           >
             <div className="   h-56 w-full ">
               {val.images.map((img: Record<string, string>, index: number) => (
-                <React.Fragment key={index}>
+                <React.Fragment key={index} >
                   {img.featured_image && (
                     <Image
                       src={img.src}
