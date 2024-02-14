@@ -3,9 +3,9 @@
 import { PropertyDynamicPage } from "@/app/components";
 import React from "react";
 import useSingleProperty from "./useSingleProperty";
-const page = () => {
+const Property = () => {
   const {} = useSingleProperty();
   return <PropertyDynamicPage />;
 };
 
-export default page;
+export default Property;

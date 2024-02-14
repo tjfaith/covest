@@ -2,9 +2,9 @@
 import { PropertyDynamicPage } from "@/app/components";
 import React from "react";
 import useSingleLand from "./useSingleLand";
-const page = () => {
+const LandProperty = () => {
   const {} = useSingleLand();
-  return <PropertyDynamicPage />;
+  return (<PropertyDynamicPage />);
 };
 
-export default page;
+export default LandProperty;

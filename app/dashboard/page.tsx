@@ -10,11 +10,10 @@ import {
 } from "lucide-react";
 import { CustomButton } from "@/app/components";
 
-const dashboard = () => {
+const Dashboard = () => {
   const {} = useDashboard();
   return (
     <div>
-
       <div className="flex items-center justify-between mb-5">
         <div className="font-extrabold">Dashboard</div>
         <div className="flex items-center ">
@@ -103,8 +102,7 @@ const dashboard = () => {
         <div className="bg-blue-50 rounded p-2 shadow mb-2">
           <p className="text-blue-600 mb-1">New Property Listing:</p>
           <p className="text-blue-800 text-sm">
-            "Check out the stunning waterfront property just listed in your
-            area."
+            Check out the stunning waterfront property just listed in your area.
           </p>
           <p className="text-blue-500 text-xs mt-1">2 hours ago</p>
         </div>
@@ -113,8 +111,7 @@ const dashboard = () => {
         <div className="bg-green-50 rounded p-2 shadow mb-2">
           <p className="text-green-600 mb-1">Open House Reminder:</p>
           <p className="text-green-800 text-sm">
-            "Don't forget about the open house event this weekend. See you
-            there!"
+            Don&apos;t forget about the open house event this weekend. See you there!
           </p>
           <p className="text-green-500 text-xs mt-1">4 hours ago</p>
         </div>
@@ -123,8 +120,8 @@ const dashboard = () => {
         <div className="bg-yellow-50 rounded p-2 shadow mb-2">
           <p className="text-yellow-600 mb-1">New Buyer Inquiry:</p>
           <p className="text-yellow-800 text-sm">
-            "A potential buyer has shown interest in your listed property.
-            Follow up soon!"
+            A potential buyer has shown interest in your listed property. Follow
+            up soon!
           </p>
           <p className="text-yellow-500 text-xs mt-1">1 day ago</p>
         </div>
@@ -133,4 +130,4 @@ const dashboard = () => {
   );
 };
 
-export default dashboard;
+export default Dashboard;
