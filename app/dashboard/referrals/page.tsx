@@ -13,7 +13,6 @@ const Referrals = () => {
       <div className="mt-5 space-y-4">
         <div className="animate__animated animate__fadeInUp animate__faster bg-foreground  rounded-sm p-5 flex md:flex-row flex-col items-center justify-between  md:pr-24 md:pl-10">
           <div className="flex-grow ">
-            {/* <div className="lg:text-4xl text-2xl font-light lg:w-1/3 bg-red-400 md:flex-row flex-col "> */}
             <div className="flex items-center mt-5 md:flex-row flex-col lg:text-4xl md:font-light font-extrabold lg:w-1/3  break-words">
               Refer Client to get free coupon
             </div>

@@ -19,7 +19,7 @@ const SideBar = () => {
     setConfirmLogout,
   } = useSidebar();
   return (
-    <div className={`${showSideBar?'bg-yellow-300/20 inset-0 z-10 w-full fixed':'hidden lg:flex'} `} onClick={hideMenu}>
+    <>
       {confirmLogout && (
         <ConfirmAlert
           title={"Logout?"}
@@ -109,7 +109,13 @@ const SideBar = () => {
           </ul>
         </div>
       </div>
-    </div>
+      <div
+        className={`${
+          showSideBar ? "bg-yellow-300/20 inset-0 z-10 fixed" : "hidden lg:flex"
+        } w-screen h-screen fixed z-10 `}
+        onClick={hideMenu}
+      ></div>
+    </>
   );
 };
 

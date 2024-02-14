@@ -45,6 +45,7 @@ function useSidebar() {
     },
   ];
   const handleChangePage=(route_to:string)=>{
+   dispatch(toggleSideBar(false));
     router.push(route_to);
   }
   
