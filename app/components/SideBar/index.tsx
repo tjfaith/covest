@@ -82,8 +82,8 @@ const SideBar = () => {
                 }  w-1 h-5 rounded-r-md`}
               ></div>
 
-              <Link
-                href="/dashboard/profile"
+              <div
+                onClick={()=>handleChangePage("/dashboard/profile")}
                 className={`${
                   activePage === "profile"
                     ? "bg-primary/50 text-secondary animate__animated animate__headShake"
@@ -92,7 +92,7 @@ const SideBar = () => {
               >
                 <CircleUserRound className="w-4 h-4" />
                 <span>Profile</span>
-              </Link>
+              </div>
             </li>
             <li className="flex items-center space-x-3">
               <div className={`  w-1 h-5 rounded-r-md`}></div>
