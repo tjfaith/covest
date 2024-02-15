@@ -8,6 +8,7 @@ export { default as SocialLogin } from "./Authentication/SocialLogin";
 export { default as SideBar } from "./SideBar";
 export { default as TopBar } from "./TopBar";
 export { default as PersonalData } from "./PersonalData";
+export { default as BuyProperty } from "./BuyProperty";
 
 // Home Component
 export { default as HomePage } from "./HomeComponents";
@@ -24,4 +25,5 @@ export { default as Pagination } from "./ui/Pagination";
 export { default as PropertyDynamicPage } from "./ui/PropertyDynamicPage";
 export { default as ConfirmAlert } from "./ui/ConfirmAlert";
 export { default as ContactRetailor } from "./ui/ContactRetailor";
+export { default as CustomTab } from "./ui/CustomTab";
 

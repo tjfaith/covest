@@ -70,6 +70,10 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      translate: {
+				200: '200%',
+				300: '300%',
+			},
       maxWidth: {
         "5-screen": "5vw",
         "10-screen": "10vw",
