@@ -33,7 +33,7 @@ const SideBar = () => {
       <div
         className={`${
           showSideBar ? "flex" : "hidden lg:flex"
-        } h-screen w-60 md:w-72 bg-primary/80  flex-col fixed pb-10 z-20   animate__animated animate__slideInLeft`}
+        } h-screen w-60 md:w-72 bg-primary  flex-col fixed pb-10 z-20   animate__animated animate__slideInLeft`}
       >
         <div className="flex items-center font-bold space-x-3 text-xl p-5   ">
           <Image
