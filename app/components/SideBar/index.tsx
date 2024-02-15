@@ -111,8 +111,8 @@ const SideBar = () => {
       </div>
       <div
         className={`${
-          showSideBar ? "bg-yellow-300/20 lg:hidden inset-0 z-10 fixed" : "hidden lg:flex"
-        } w-72 h-screen  z-10 `}
+          showSideBar ? "bg-yellow-300/20 lg:hidden inset-0 z-10 fixed w-full h-screen " : "hidden w-72 lg:flex"
+        }  `}
         onClick={hideMenu}
       ></div>
     </>
