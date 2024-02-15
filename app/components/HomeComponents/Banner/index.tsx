@@ -16,7 +16,7 @@ const Banner = () => {
             Real Estate
           </span>
           <div className="animate__animated animate__fadeIn  animate__delay-1s animate__slow">
-            Investment Never Get any Easier Than This
+            Investments Never Gets any Easier!
           </div>
         </h1>
         <p className=" lg:text-2xl mt-5 lg:mt-10 font-bold w-8/12">
