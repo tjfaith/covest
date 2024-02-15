@@ -27,10 +27,10 @@ const Profile = () => {
             label="First Name*"
             placeholder="First name"
             inputType="text"
-            labelColor="text-secondary"
-            bgColor="bg-foreground"
-            textColor="text-secondary"
-            borderColor="border-secondary"
+            labelColor="text-primary"
+            bgColor="bg-card"
+            textColor="text-primary"
+            borderColor="border-primary"
             value={formData.firstName}
             handleChange={(value: string) =>
               setFormData({ ...formData, firstName: value })
@@ -42,10 +42,10 @@ const Profile = () => {
             label="Last Name*"
             placeholder="Last name"
             inputType="text"
-            labelColor="text-secondary"
-            bgColor="bg-foreground"
-            textColor="text-secondary"
-            borderColor="border-secondary"
+            labelColor="text-primary"
+            bgColor="bg-card"
+            textColor="text-primary"
+            borderColor="border-primary"
             value={formData.lastName}
             handleChange={(value: string) =>
               setFormData({ ...formData, lastName: value })
@@ -60,10 +60,10 @@ const Profile = () => {
             label="Email*"
             placeholder="youremail@domain.com"
             inputType="email"
-            labelColor="text-secondary"
-            bgColor="bg-foreground"
-            textColor="text-secondary"
-            borderColor="border-secondary"
+            labelColor="text-primary"
+            bgColor="bg-card"
+            textColor="text-primary"
+            borderColor="border-primary"
             value={formData.email}
             handleChange={(value: string) =>
               setFormData({ ...formData, email: value })
@@ -75,10 +75,10 @@ const Profile = () => {
             label="Phone Number*"
             placeholder="Phone Number"
             inputType="text"
-            labelColor="text-secondary"
-            bgColor="bg-foreground"
-            textColor="text-secondary"
-            borderColor="border-secondary"
+            labelColor="text-primary"
+            bgColor="bg-card"
+            textColor="text-primary"
+            borderColor="border-primary"
             value={formData.phoneNumber}
             handleChange={(value: string) =>
               setFormData({ ...formData, phoneNumber: value })
@@ -90,10 +90,10 @@ const Profile = () => {
             data={gender}
             value={formData.gender}
             label={"Gender*"}
-            labelColor="text-secondary"
-            bgColor="bg-foreground"
-            textColor="text-secondary"
-            borderColor="border-secondary"
+            labelColor="text-primary"
+            bgColor="bg-card"
+            textColor="text-primary"
+            borderColor="border-primary"
             defaultText={"Select Gender"}
             handleChange={() => {}}
           />
@@ -102,10 +102,10 @@ const Profile = () => {
             data={maritalStatus}
             value={formData.maritalStatus}
             label={"Marital Status*"}
-            labelColor="text-secondary"
-            bgColor="bg-foreground"
-            textColor="text-secondary"
-            borderColor="border-secondary"
+            labelColor="text-primary"
+            bgColor="bg-card"
+            textColor="text-primary"
+            borderColor="border-primary"
             defaultText={"Select Gender"}
             handleChange={() => {}}
           />
@@ -117,10 +117,10 @@ const Profile = () => {
             icon={<CalendarDays />}
             label="Date of Birth*"
             inputType="date"
-            labelColor="text-secondary"
-            bgColor="bg-foreground"
-            textColor="text-secondary"
-            borderColor="border-secondary"
+            labelColor="text-primary"
+            bgColor="bg-card"
+            textColor="text-primary"
+            borderColor="border-primary"
             value={formData.dateOfBirth}
             handleChange={(value: string) =>
               setFormData({ ...formData, dateOfBirth: value })
@@ -132,10 +132,10 @@ const Profile = () => {
             icon={<CalendarDays />}
             label="Address*"
             inputType="date"
-            labelColor="text-secondary"
-            bgColor="bg-foreground"
-            textColor="text-secondary"
-            borderColor="border-secondary"
+            labelColor="text-primary"
+            bgColor="bg-card"
+            textColor="text-primary"
+            borderColor="border-primary"
             value={formData.address}
             handleChange={(value: string) =>
               setFormData({ ...formData, address: value })

@@ -78,7 +78,7 @@ const SideBar = () => {
               <div
                 className={`${
                   activePage === "profile" &&
-                  "bg-primary animate__animated animate__fadeInLeft"
+                  "bg-primary-foreground animate__animated animate__fadeInLeft"
                 }  w-1 h-5 rounded-r-md`}
               ></div>
 
@@ -100,7 +100,7 @@ const SideBar = () => {
               <div
                 onClick={() => setConfirmLogout(true)}
                 className="
-                bg-transparent text-primary-foreground hover:text-yellow-300 duration-300 transition-all ease-in-out cursor-pointer text-primary px-2 flex items-center font-bold space-x-3  p-1 text-sm rounded-lg  w-full"
+                bg-transparent text-primary-foreground hover:text-yellow-300 duration-300 transition-all ease-in-out cursor-pointer px-2 flex items-center font-bold space-x-3  p-1 text-sm rounded-lg  w-full"
               >
                 <LogOut className="w-4 h-4" />
                 <span>Log out</span>
