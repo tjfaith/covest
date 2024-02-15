@@ -33,7 +33,7 @@ const SideBar = () => {
       <div
         className={`${
           showSideBar ? "flex" : "hidden lg:flex"
-        } h-screen w-72 bg-primary  flex-col fixed pb-10 z-20   animate__animated animate__slideInLeft`}
+        } h-screen w-72 bg-gradient-to-b from-primary to-accent-foreground  flex-col fixed pb-10 z-20   animate__animated animate__slideInLeft`}
       >
         <Link href={'/'} className="flex items-center font-bold space-x-3 text-xl p-5   ">
           <Image

@@ -146,6 +146,7 @@ const Profile = () => {
 
         <div className="mt-6 inline-block">
           <CustomButton
+          bgColor="bg-gradient-to-b from-primary  to-accent-foreground"
             type="submit"
             label={"Save"}
             showLoading={loading}
