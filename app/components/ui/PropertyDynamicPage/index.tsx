@@ -52,7 +52,7 @@ const PropertyDynamicPage = () => {
             </div>
             <div className="mt-2 inline-block md:self-end">
               <CustomButton
-                label={"PURCHASE PROPERTY"}
+                label={"BUY PROPERTY"}
                 handleClick={() => {}}
               />
             </div>
@@ -61,7 +61,7 @@ const PropertyDynamicPage = () => {
       </div>
 
       <div className="flex gap-10 md:flex-nowrap flex-wrap-reverse mt-5">
-        <div className="w-1/2 space-y-2 flex-grow">
+        {/* <div className="w-1/2 space-y-2 flex-grow">
           <h1 className="text-lg font-bold">Contact Retailor</h1>
           <div className="text-lg font-bold">
             <a
@@ -78,7 +78,7 @@ const PropertyDynamicPage = () => {
             <hr className="flex-grow  bg-secondary ml-2" />
           </div>
           <ContactRetailor />
-        </div>
+        </div> */}
         <div className="w-full flex-grow space-y-8 ">
           <h1 className="text-lg font-bold">Property Details</h1>
 

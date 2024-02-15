@@ -33,7 +33,7 @@ const SideBar = () => {
       <div
         className={`${
           showSideBar ? "flex" : "hidden lg:flex"
-        } h-screen w-60 md:w-72 bg-secondary  flex-col fixed pb-10 z-20   animate__animated animate__slideInLeft`}
+        } h-screen w-60 md:w-72 bg-primary/80  flex-col fixed pb-10 z-20   animate__animated animate__slideInLeft`}
       >
         <div className="flex items-center font-bold space-x-3 text-xl p-5   ">
           <Image
@@ -53,7 +53,7 @@ const SideBar = () => {
                   <div
                     className={`${
                       activePage === val.id &&
-                      "bg-primary animate__animated animate__fadeInLeft"
+                      "bg-primary-foreground animate__animated animate__fadeInLeft"
                     }  w-1 h-5 rounded-r-md`}
                   ></div>
 
@@ -61,8 +61,8 @@ const SideBar = () => {
                     onClick={() => handleChangePage(val.route_to as string)}
                     className={`${
                       activePage === val.id
-                        ? "bg-primary/50 text-secondary animate__animated animate__headShake shadow-lg"
-                        : "bg-secondary text-primary hover:text-yellow-300 duration-300 transition-all"
+                        ? "bg-primary-foreground text-secondary-foreground animate__animated animate__headShake shadow-lg"
+                        : "bg-transparent text-primary-foreground hover:text-yellow-300 duration-300 transition-all ease-in-out"
                     } px-2 flex items-center font-bold space-x-3  p-2 text-sm rounded-lg  w-full cursor-pointer   `}
                   >
                     {<val.icon className="w-4 h-4" />}
@@ -86,8 +86,8 @@ const SideBar = () => {
                 onClick={()=>handleChangePage("/dashboard/profile")}
                 className={`${
                   activePage === "profile"
-                    ? "bg-primary/50 text-secondary animate__animated animate__headShake"
-                    : "bg-secondary text-primary"
+                    ? "bg-primary-foreground text-secondary-foreground animate__animated animate__headShake"
+                    : "bg-transparent text-primary-foreground hover:text-yellow-300 duration-300 transition-all ease-in-out"
                 } px-2 flex items-center font-bold space-x-3  p-2 text-sm rounded-lg cursor-pointer   w-full`}
               >
                 <CircleUserRound className="w-4 h-4" />
@@ -100,7 +100,7 @@ const SideBar = () => {
               <div
                 onClick={() => setConfirmLogout(true)}
                 className="
-                bg-secondary cursor-pointer text-primary px-2 flex items-center font-bold space-x-3  p-1 text-sm rounded-lg  w-full"
+                bg-transparent text-primary-foreground hover:text-yellow-300 duration-300 transition-all ease-in-out cursor-pointer text-primary px-2 flex items-center font-bold space-x-3  p-1 text-sm rounded-lg  w-full"
               >
                 <LogOut className="w-4 h-4" />
                 <span>Log out</span>

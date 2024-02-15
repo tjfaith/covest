@@ -15,7 +15,7 @@ const CustomInput = ({
   errorMessage,
   labelColor="text-foreground",
   textColor = "text-primary",
-  bgColor = "bg-secondary",
+  bgColor = "bg-background",
   borderColor ='border-primary',
   handleChange,
 }: CustomInputProps) => {

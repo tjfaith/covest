@@ -15,8 +15,8 @@ const Dashboard = () => {
   return (
     <div>
       <div className="flex items-center justify-between mb-5">
-        <div className="font-extrabold">Dashboard</div>
-        <div className="flex items-center ">
+        <div className="font-extrabold text-primary">Dashboard</div>
+        <div className="flex items-center text-primary">
           <Image
             src="/images/hand_wave.png"
             className="ml-2"
@@ -25,35 +25,35 @@ const Dashboard = () => {
             height={30}
           />
           <span>Hello</span>{" "}
-          <span className=" font-extrabold text-secondary ml-1">
+          <span className=" font-extrabold  ml-1">
             {"Tejiri"}
           </span>
         </div>
       </div>
       {/* <hr className="border-t border-muted-foreground" /> */}
       <div className=" flex flex-wrap gap-4 items-center justify-between mt-10 overflow-hidden">
-        <div className="animate__animated animate__fadeInRight animate__slow relative overflow-hidden inline-flex items-center bg-secondary/50 text-primary rounded-lg p-2 flex-grow h-26">
-          <div className="bg-secondary p-3 rounded-lg h-full w-1/3 text-2xl flex items-center justify-center font-extrabold">
+        <div className="animate__animated animate__fadeInRight animate__slow relative overflow-hidden inline-flex items-center bg-card text-primary rounded-lg p-2 flex-grow h-26">
+          <div className="bg-secondary-foreground p-3 rounded-lg h-full w-1/3 text-2xl flex items-center justify-center font-extrabold">
             500
           </div>
-          <div className="relative z-10 text-lg font-bold px-5 text-secondary">
+          <div className="relative z-10 text-lg font-bold px-5 text-primary">
             <div>Total Portfolio</div>
           </div>
-          <CandlestickChart className="h-28 w-28 text-primary/40 absolute  bottom-0 right-0 -rotate-45" />
+          <CandlestickChart className="h-28 w-28 text-primary/20 absolute  bottom-0 right-0 -rotate-45" />
         </div>
 
-        <div className="animate__animated animate__fadeInRight animate__fast relative overflow-hidden inline-flex items-center bg-secondary/10 text-primary rounded-lg p-2 flex-grow h-26">
+        <div className="animate__animated animate__fadeInRight animate__fast relative overflow-hidden inline-flex items-center bg-secondary-foreground text-primary rounded-lg p-2 flex-grow h-26">
           <div className="bg-primary text-secondary p-3 h-full w-1/3 text-2xl flex items-center justify-center rounded-lg font-extrabold">
             500
           </div>
           <div className="relative z-10 text-lg font-bold px-5 text-secondary">
             <div>Total Property Costs</div>
           </div>
-          <ScatterChart className="h-28 w-28 text-secondary/40 absolute  bottom-0 right-0 -rotate-45" />
+          <ScatterChart className="h-28 w-28 text-card/10 absolute  bottom-0 right-0 -rotate-45" />
         </div>
 
-        <div className="animate__animated animate__fadeInRight animate__faster relative overflow-hidden inline-flex items-center bg-secondary/90 text-primary rounded-lg p-2 flex-grow h-26">
-          <div className="bg-secondary/50 shadow-sm p-3 rounded-lg h-full w-1/3 text-2xl flex items-center justify-center font-extrabold">
+        <div className="animate__animated animate__fadeInRight animate__faster relative overflow-hidden inline-flex items-center bg-card text-primary rounded-lg p-2 flex-grow h-26">
+          <div className="bg-secondary-foreground shadow-sm p-3 rounded-lg h-full w-1/3 text-2xl flex items-center justify-center font-extrabold">
             500
           </div>
           <div className="relative z-10 text-lg font-bold px-5 text-primary flex-grow">
@@ -64,13 +64,13 @@ const Dashboard = () => {
       </div>
 
       <div className="flex md:flex-row flex-col items-center mt-10 gap-4">
-        <div className="bg-foreground p-5 rounded-xl flex md:items-center md:flex-row flex-col gap-3 justify-between  ">
+        <div className="bg-card p-5 rounded-xl flex md:items-center md:flex-row flex-col gap-3 justify-between  ">
           <div>
-            <span className="text-4xl font-extrabold text-secondary">
+            <span className="text-4xl font-extrabold text-primary">
               With this LandBanking offer
             </span>{" "}
             <br />
-            <span className="font-extrabold">
+            <span className="font-extrabold text-secondary-foreground">
               you too can buy land as an investment, hold it for 18 months, and
               earn 45% Return of Investment
             </span>
@@ -84,19 +84,19 @@ const Dashboard = () => {
             />
           </div>
         </div>
-        <div className=" relative overflow-hidden inline-flex items-center bg-secondary/50 text-primary rounded-lg p-2 flex-grow h-26">
-          <div className="bg-secondary p-3 rounded-lg h-full w-1/3 text-2xl flex items-center justify-center font-extrabold">
+        <div className=" relative overflow-hidden inline-flex items-center bg-card text-primary rounded-lg p-2 flex-grow h-26">
+          <div className="bg-primary text-primary-foreground p-3 rounded-lg h-full w-1/3 text-2xl flex items-center justify-center font-extrabold">
             500
           </div>
-          <div className="relative z-10 text-lg font-bold px-5 text-secondary">
+          <div className="relative z-10 text-lg font-bold px-5">
             <div>Total Referrals</div>
           </div>
           <Users className="h-28 w-28 text-primary/40 absolute  bottom-0 right-0 " />
         </div>
       </div>
 
-      <div className="bg-gray-100 font-sans mt-5">
-        <h1 className="text-lg font-bold mb-4">Recent Activity</h1>
+      <div className=" font-sans mt-5 text-primary">
+        <h1 className="text-lg font-bold mb-4 text-primary">Recent Activity</h1>
 
         Activity Item 1
         <div className="bg-blue-50 rounded p-2 shadow mb-2">

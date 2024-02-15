@@ -5,8 +5,8 @@ const CustomButton = ({
   label,
   showLoading,
   type = "button",
-  bgColor = "bg-secondary",
-  textColor = "text-primary",
+  bgColor = "bg-primary",
+  textColor = "text-primary-foreground",
   handleClick,
 }: ButtonProps) => {
   return (

@@ -2,8 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 @import 'animate.css/animate.css';
+
 @layer base {
-  :root {
+
+  @layer base {
+    :root {
+      --background: 60, 0%, 100%;
+      --foreground: 120 8% 5%;
+  
+      --card: 150 8% 95%;
+      --card-foreground: 120 8% 5%;
+  
+      --popover: 150 8% 95%;
+      --popover-foreground: 120 8% 5%;
+  
+      --primary: 139 100% 29%;
+      --primary-foreground: 180 9% 98%;
+  
+      --secondary: 53, 90%, 53%;
+      --secondary-foreground: 56, 47%, 12%;
+  
+      --muted: 135 9% 91%;
+      --muted-foreground: 140 9% 45%;
+  
+      --accent: 144 11% 91%;
+      --accent-foreground: 120 8% 5%;
+  
+      --destructive: 221, 80%, 17%;
+      --destructive-foreground: 229, 26%, 92%;
+  
+      --border: 140 9% 87%;
+      --input: 133 9% 81%;
+      --ring: 139 36% 72%;
+  
+      --radius: 0.5rem;
+    }
+
+    /* :root {
+      --background: hsl(150, 9%, 82%);
+      --foreground: hsl(120 8% 5%);
+  
+      --card: hsl(150 8% 95%);
+      --card-foreground: hsl(120 8% 5%);
+  
+      --popover: hsl(150 8% 95%);
+      --popover-foreground: hsl(120 8% 5%);
+  
+      --primary: hsl(139 100% 29%);
+      --primary-foreground: hsl(180 9% 98%);
+  
+      --secondary: hsl(144 11% 91%);
+      --secondary-foreground: hsl(120 8% 5%);
+  
+      --muted: hsl(135 9% 91%);
+      --muted-foreground: hsl(140 9% 45%);
+  
+      --accent: hsl(144 11% 91%);
+      --accent-foreground: hsl(120 8% 5%);
+  
+      --destructive: hsl(0 84% 60%);
+      --destructive-foreground: hsl(0 0% 98%);
+  
+      --border: hsl(140 9% 87%);
+      --input: hsl(133 9% 81%);
+      --ring: hsl(139 36% 72%);
+  
+      --radius: 0.5rem;
+    } */
+    
+    /* .dark {
+      --background: 60 3% 6%;
+      --foreground: 0 0% 98%;
+  
+      --card: 60 6% 7%;
+      --card-foreground: 0 0% 98%;
+  
+      --popover: 60 6% 7%;
+      --popover-foreground: 0 0% 98%;
+  
+      --primary: 66 30% 53%;
+      --primary-foreground: 0 0% 2%;
+  
+      --secondary: 75 5% 15%;
+      --secondary-foreground: 0 0% 98%;
+  
+      --muted: 70 5% 22%;
+      --muted-foreground: 65 5% 49%;
+  
+      --accent: 65 45% 14%;
+      --accent-foreground: 0 0% 98%;
+  
+      --destructive: 0 84% 60%;
+      --destructive-foreground: 0 0% 98%;
+  
+      --border: 60 5% 12%;
+      --input: 60 4% 18%;
+      --ring: 66 30% 40%;
+    } */
+  }
+
+
+  /* :root {
     --gradient: #F0F2F0;
 
     --background: 128 4.550000000000001% 7.6%;
@@ -34,7 +133,7 @@
     --destructive-foreground: 128 0.7000000000000001% 99.75%;
 
     --ring: 128 7% 95%;
-  }
+  } */
 }
 
 
