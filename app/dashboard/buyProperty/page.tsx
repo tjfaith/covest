@@ -13,7 +13,7 @@ const BuyProperty = () => {
           <Link
             href={`/dashboard/buyProperty/${index}`}
             key={index}
-            className=" w-full max-w-xs flex-shrink-0  rounded overflow-hidden border border-secondary/20 transition-all duration-200 ease-in-out hover:shadow-lg"
+            className=" w-full max-w-xs flex-shrink-0  rounded overflow-hidden border border-border transition-all duration-200 ease-in-out hover:shadow-lg"
           >
             <div className="   h-56 w-full ">
               {val.images.map((img: Record<string, string>, index: number) => (
@@ -32,15 +32,15 @@ const BuyProperty = () => {
               ))}
             </div>
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">{val.title}</div>
-              <p className="text-gray-700 text-base">
+              <div className="font-bold text-xl mb-2 text-primary">{val.title}</div>
+              <p className="text-foreground text-base">
                 {val.description.length > 100
                   ? val.description.slice(0, 100) + "..."
                   : val.description}
               </p>
             </div>
             <div className="px-6 py-4">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+              <span className="inline-block bg-muted rounded-full px-3 py-1 text-sm font-semibold text-foreground mr-2">
                 {val.currency == "naira" && <span>&#8358;</span>}
                 {Number(val.price).toLocaleString()}
               </span>

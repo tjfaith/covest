@@ -23,8 +23,8 @@ const Pagination = ({
         <button
           onClick={handlePrev}
           className={`${
-            currentPage === 1 ? "bg-gray-100 cursor-not-allowed" : "bg-white"
-          } flex items-center w-10 h-10 rounded-full justify-center space-x-2 border-2  border-secondary   font-semibold`}
+            currentPage === 1 ? "bg-muted cursor-not-allowed" : "bg-background"
+          } flex items-center w-10 h-10 rounded-full justify-center space-x-2 border-2  border-primary text-primary   font-semibold`}
         >
           <ArrowLeft />
         </button>
@@ -37,7 +37,7 @@ const Pagination = ({
                 <button
                   onClick={() => handleUpdatePage(Number(val))}
                   className={`${
-                    val === currentPage && "bg-secondary rounded-lg text-primary"
+                    val === currentPage && "bg-secondary rounded-lg text-foreground"
                   }  p-3  w-10 h-10 `}
                   key={index}
                 >
@@ -51,9 +51,9 @@ const Pagination = ({
           onClick={handleNext}
           className={`${
             currentPage === totalPages
-              ? "bg-gray-100 cursor-not-allowed"
-              : "bg-white"
-          } flex items-center w-10 h-10 justify-center space-x-2 border-2 rounded-full border-secondary  font-semibold`}
+              ? "bg-muted cursor-not-allowed"
+              : "bg-background"
+          } flex items-center w-10 h-10 justify-center space-x-2 border-2 rounded-full border-primary text-primary  font-semibold`}
         >
           <ArrowRight />
         </button>

@@ -43,7 +43,7 @@ const SideBar = () => {
             alt="site logo"
             className="animate__animated animate__rotateIn animate__slower"
           />
-          <div>COvest</div>
+          <div className="text-primary-foreground">COvest</div>
         </Link>
         <div className=" flex flex-col h-full justify-between">
           <ul className=" pr-3 space-y-3 mt-5">

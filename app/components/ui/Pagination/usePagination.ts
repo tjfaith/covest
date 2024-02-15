@@ -17,8 +17,8 @@ function usePagination({
       pageNumbers.push(i);
     }
 
-    const leftRange = pageNumbers.slice(0, 3);
-    const rightRange = pageNumbers.slice(-3);
+    const leftRange = pageNumbers.slice(0, 2);
+    const rightRange = pageNumbers.slice(-2);
     const filteredRightRange = rightRange.filter(
       (value) => !leftRange.includes(value)
     );

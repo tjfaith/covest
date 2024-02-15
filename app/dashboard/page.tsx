@@ -91,7 +91,7 @@ const Dashboard = () => {
           <div className="relative z-10 text-lg font-bold px-5">
             <div>Total Referrals</div>
           </div>
-          <Users className="h-28 w-28 text-primary/40 absolute  bottom-0 right-0 " />
+          <Users className="h-28 w-28 text-muted absolute  bottom-0 right-0 " />
         </div>
       </div>
 
