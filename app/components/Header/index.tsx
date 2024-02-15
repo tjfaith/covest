@@ -21,10 +21,10 @@ const Header = () => {
         <div>COvest</div>
       </div>
       <button
-          className="bg-primary text-primary-foreground mt-4 flex items-center space-x-3 p-2"
+          className="bg-primary text-primary-foreground flex items-center space-x-3 p-2"
           onClick={() => setShowAuthentication(true)}
         >
-          <span className=" md:text-base font-bold">Start Investing</span>{" "}
+          <span className=" md:text-base font-bold text-xs">Start&nbsp;Investing</span>{" "}
           <ArrowRight />
         </button>
       {showAuthentication && (

@@ -84,7 +84,7 @@ const Signup = ({ setShowLogin }: SignupProps) => {
           showLoading={loading}
           label={"Signup"}
           type="submit"
-          bgColor="bg-background/50"
+          // bgColor="bg-background/50"
           handleClick={() => {}}
         />
         <CustomButton

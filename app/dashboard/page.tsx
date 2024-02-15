@@ -39,7 +39,7 @@ const Dashboard = () => {
           <div className="relative z-10 text-lg font-bold px-5 text-primary">
             <div>Total Portfolio</div>
           </div>
-          <CandlestickChart className="h-28 w-28 text-primary/20 absolute  bottom-0 right-0 -rotate-45" />
+          <CandlestickChart className="h-28 w-28 text-muted absolute  bottom-0 right-0 -rotate-45" />
         </div>
 
         <div className="animate__animated animate__fadeInRight animate__fast relative overflow-hidden inline-flex items-center bg-secondary-foreground text-primary rounded-lg p-2 flex-grow h-26">
@@ -59,7 +59,7 @@ const Dashboard = () => {
           <div className="relative z-10 text-lg font-bold px-5 text-primary flex-grow">
             <div>Total Land Costs</div>
           </div>
-          <BarChartHorizontal className="h-28 w-28 text-primary/40 absolute bottom-0 right-0 -rotate-45" />
+          <BarChartHorizontal className="h-28 w-28 text-muted absolute bottom-0 right-0 -rotate-45" />
         </div>
       </div>
 

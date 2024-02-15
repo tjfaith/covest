@@ -33,9 +33,9 @@ const SideBar = () => {
       <div
         className={`${
           showSideBar ? "flex" : "hidden lg:flex"
-        } h-screen w-60 md:w-72 bg-primary  flex-col fixed pb-10 z-20   animate__animated animate__slideInLeft`}
+        } h-screen w-72 bg-primary  flex-col fixed pb-10 z-20   animate__animated animate__slideInLeft`}
       >
-        <link href={'/'} className="flex items-center font-bold space-x-3 text-xl p-5   ">
+        <Link href={'/'} className="flex items-center font-bold space-x-3 text-xl p-5   ">
           <Image
             src={"/logo.png"}
             width={30}
@@ -44,7 +44,7 @@ const SideBar = () => {
             className="animate__animated animate__rotateIn animate__slower"
           />
           <div>COvest</div>
-        </link>
+        </Link>
         <div className=" flex flex-col h-full justify-between">
           <ul className=" pr-3 space-y-3 mt-5">
             {navMenu.map(
