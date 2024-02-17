@@ -4,8 +4,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import usePersonalData from "./usePersonalData";
 import { CustomButton, CustomInput, CustomSelect } from "@/app/components";
-import { AtSign, CalendarDays, Contact2, Phone } from "lucide-react";
-const Profile = () => {
+import { AtSign, CalendarDays, Contact2, Landmark, MemoryStick, Phone, Map } from "lucide-react";
+const PersonalData = () => {
   const {
     handleSubmit,
     setFormData,
@@ -17,7 +17,7 @@ const Profile = () => {
     feedbackMessage,
   } = usePersonalData();
   return (
-    <div>
+    <div className="animate__animated animate__fadeIn">
       <form onSubmit={handleSubmit}>
         {/* First Name */}
         <div className="mb-4 flex items-center md:flex-row flex-col justify-between gap-4">
@@ -143,10 +143,58 @@ const Profile = () => {
           />
         </div>
 
+        <div className="mb-4 flex items-center md:flex-row flex-col justify-between gap-4">
+          <CustomInput
+            error={validateDetails?.city}
+            icon={<MemoryStick />}
+            label="City*"
+            placeholder="City"
+            inputType="text"
+            labelColor="text-primary"
+            bgColor="bg-background"
+            textColor="text-primary"
+            borderColor="border-primary"
+            value={formData.city}
+            handleChange={(value: string) =>
+              setFormData({ ...formData, city: value })
+            }
+          />
+          <CustomInput
+            error={validateDetails?.state}
+            icon={<Landmark />}
+            label="State*"
+            placeholder="State"
+            inputType="text"
+            labelColor="text-primary"
+            bgColor="bg-background"
+            textColor="text-primary"
+            borderColor="border-primary"
+            value={formData.state}
+            handleChange={(value: string) =>
+              setFormData({ ...formData, state: value })
+            }
+          />
+
+          <CustomInput
+            error={validateDetails?.country}
+            icon={<Map />}
+            label="Country*"
+            placeholder="Country"
+            inputType="text"
+            labelColor="text-primary"
+            bgColor="bg-background"
+            textColor="text-primary"
+            borderColor="border-primary"
+            value={formData.country}
+            handleChange={(value: string) =>
+              setFormData({ ...formData, country: value })
+            }
+          />
+        </div>
 
         <div className="mt-6 inline-block">
           <CustomButton
-          bgColor="bg-gradient-to-b from-primary  to-accent-foreground"
+            bgColor="bg-gradient-to-b from-primary  to-accent-foreground"
             type="submit"
             label={"Save"}
             showLoading={loading}
@@ -158,4 +206,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default PersonalData;

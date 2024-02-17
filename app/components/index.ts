@@ -7,12 +7,12 @@ export { default as Signup } from "./Authentication/Signup";
 export { default as SocialLogin } from "./Authentication/SocialLogin";
 export { default as SideBar } from "./SideBar";
 export { default as TopBar } from "./TopBar";
-export { default as PersonalData } from "./PersonalData";
-export { default as BuyProperty } from "./BuyProperty";
+export { default as BuyProperty } from "./BuyNow/BuyProperty";
 
 // Home Component
 export { default as HomePage } from "./HomeComponents";
 export { default as Banner } from "./HomeComponents/Banner";
+
 
 // UI
 export { default as CustomInput } from "./ui/CustomInput";
@@ -26,4 +26,9 @@ export { default as PropertyDynamicPage } from "./ui/PropertyDynamicPage";
 export { default as ConfirmAlert } from "./ui/ConfirmAlert";
 export { default as ContactRetailor } from "./ui/ContactRetailor";
 export { default as CustomTab } from "./ui/CustomTab";
+
+// DASHBOARD
+// --profile
+export { default as PersonalData } from "./Profile/PersonalData";
+export { default as NextOfKin } from "./Profile/NextOfKin";
 

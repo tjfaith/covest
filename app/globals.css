@@ -6,7 +6,7 @@
 @layer base {
 
   @layer base {
-    :root {
+     :root {
       --background: 60, 0%, 100%;
       --foreground: 120 8% 5%;
   
@@ -36,7 +36,7 @@
       --ring: 139 36% 72%;
   
       --radius: 0.5rem;
-    }
+    } 
 
     /* :root {
       --background: hsl(150, 9%, 82%);

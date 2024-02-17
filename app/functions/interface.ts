@@ -75,10 +75,11 @@ export interface ConfirmAlertProps {
 
 export interface CustomTabProps{
   tabItems:Record<string, string>;
-  defaultItem:string
-  action?: () => void;
-
+  currentTab:string,
+  setCurrentTab:React.Dispatch<React.SetStateAction<string>>;
 }
+
+
 
 export interface ButtonProps {
   icon?: any;
@@ -87,6 +88,7 @@ export interface ButtonProps {
   type?: ButtonType;
   bgColor?: string;
   textColor?: string;
+  customStyle?:string;
   handleClick: () => void;
 }
 

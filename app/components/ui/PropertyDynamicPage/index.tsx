@@ -5,12 +5,12 @@ import CustomButton from "../CustomButton";
 import useDynamicPage from "./useDynamicPage";
 
 import { PhoneOutgoing, Tag } from "lucide-react";
-import { ContactRetailor } from "@/app/components";
+import { BuyProperty, ContactRetailor } from "@/app/components";
 
 import "react-image-gallery/styles/css/image-gallery.css";
 
 const PropertyDynamicPage = () => {
-  const { images, details } = useDynamicPage();
+  const { images, details, showBuy, setShowBuy } = useDynamicPage();
 
   return (
     <div className=" ">
@@ -26,7 +26,26 @@ const PropertyDynamicPage = () => {
         </div>
 
         <div className="md:w-8/12">
-          <h2 className="text-lg font-bold mb-2 text-primary">Item Description</h2>
+        <div className="flex md:flex-row flex-col justify-between mb-5">
+            <div className="text-sm mt-5 text-primary">
+              <div className="flex items-center">
+                <Tag className="h-5" /> Asking
+              </div>
+              <span className=" font-extrabold text-2xl">
+                {" "}
+                &#8358;5,000,000.00
+              </span>
+            </div>
+            <div className="mt-2 inline-block md:self-end">
+              <CustomButton
+                label={"BUY PROPERTY"}
+                handleClick={() =>setShowBuy(true)}
+              />
+            </div>
+          </div>
+          <hr />
+
+          <h2 className="text-lg font-bold mb-2 text-primary mt-5">Item Description</h2>
           <p className="text-foreground text-justify">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint sed
             velit ducimus nisi nulla ratione, modi cumque doloremque inventore
@@ -40,23 +59,7 @@ const PropertyDynamicPage = () => {
             dolorum magnam. Esse! repudiandae veniam facere dolorum magnam.
             Esse!
           </p>
-          <div className="flex md:flex-row flex-col justify-between">
-            <div className="text-sm mt-5 text-primary">
-              <div className="flex items-center">
-                <Tag className="h-5" /> Asking
-              </div>
-              <span className=" font-extrabold text-2xl">
-                {" "}
-                &#8358;5,000,000.00
-              </span>
-            </div>
-            <div className="mt-2 inline-block md:self-end">
-              <CustomButton
-                label={"BUY PROPERTY"}
-                handleClick={() => {}}
-              />
-            </div>
-          </div>
+ 
         </div>
       </div>
 
@@ -103,6 +106,8 @@ const PropertyDynamicPage = () => {
           </table>
         </div>
       </div>
+
+      {showBuy && <BuyProperty setShowBuyProperty={setShowBuy}/>}
     </div>
   );
 };

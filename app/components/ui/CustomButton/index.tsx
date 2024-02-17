@@ -7,6 +7,7 @@ const CustomButton = ({
   type = "button",
   bgColor = "bg-primary",
   textColor = "text-primary-foreground",
+  customStyle="",
   handleClick,
 }: ButtonProps) => {
   return (
@@ -14,7 +15,7 @@ const CustomButton = ({
       type={type}
       disabled={showLoading}
       onClick={handleClick}
-      className={`${bgColor} ${textColor}  h-10 py-2.5 px-7 text-sm font-semibold w-full min-w-min flex items-center justify-center cursor-pointer outline-none border-none`}
+      className={`${bgColor} ${textColor} ${customStyle} h-10 py-2.5 px-7 text-sm font-semibold w-full min-w-min flex items-center justify-center cursor-pointer outline-none border-none`}
     >
       {!showLoading ? (
         <>

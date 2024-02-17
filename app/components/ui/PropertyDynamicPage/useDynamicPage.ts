@@ -1,4 +1,8 @@
+'use client'
+import { useState } from "react";
+
 function useDynamicPage(){
+  const [showBuy, setShowBuy] = useState(false)
       const images = [
         {
           original: "https://picsum.photos/id/1018/1000/600/",
@@ -27,7 +31,7 @@ function useDynamicPage(){
         { category: "Square Feet", value: "1,500" },
         // Add more details as needed
       ];
-    return { images, details };
+    return { images, details, showBuy, setShowBuy };
 }
 
 export default useDynamicPage
