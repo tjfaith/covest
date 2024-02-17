@@ -39,7 +39,7 @@ const Authentication = ({ setShowAuthentication }: AuthenticationProps) => {
             <span>+2348144141555</span>
           </small>
         </div>
-        <div className=" min-h-70-screen flex-grow bg-card w-full h-full">
+        <div className=" min-h-70-screen flex-grow bg-muted w-full h-full">
           <div className="flex items-center text-primary justify-between w-full pl-10 font-bold space-x-3 text-xl   px-5 pt-5">
             <div className=" font-bold">
               {showLogin ? <span>Login</span> : <span>Signup</span>}

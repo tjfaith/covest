@@ -3,10 +3,10 @@ import React from 'react'
 import useProfile from './useProfile'
 import { CustomTab, PersonalData } from '@/app/components';
 const Profile = () => {
-    const {} = useProfile();
+    const {tabPayload} = useProfile();
   return (
     <div>
-      <CustomTab/>
+      {/* <CustomTab tabItems={tabPayload}/> */}
       <PersonalData/>
     </div>
   )

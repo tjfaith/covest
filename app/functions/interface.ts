@@ -73,6 +73,12 @@ export interface ConfirmAlertProps {
   setShowConfirm: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+export interface CustomTabProps{
+  tabItems:Record<string, string>[];
+  action?: () => void;
+
+}
+
 export interface ButtonProps {
   icon?: any;
   label: string;

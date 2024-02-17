@@ -28,7 +28,7 @@ const Profile = () => {
             placeholder="First name"
             inputType="text"
             labelColor="text-primary"
-            bgColor="bg-card"
+            bgColor="bg-background"
             textColor="text-primary"
             borderColor="border-primary"
             value={formData.firstName}
@@ -43,7 +43,7 @@ const Profile = () => {
             placeholder="Last name"
             inputType="text"
             labelColor="text-primary"
-            bgColor="bg-card"
+            bgColor="bg-background"
             textColor="text-primary"
             borderColor="border-primary"
             value={formData.lastName}
@@ -61,7 +61,7 @@ const Profile = () => {
             placeholder="youremail@domain.com"
             inputType="email"
             labelColor="text-primary"
-            bgColor="bg-card"
+            bgColor="bg-background"
             textColor="text-primary"
             borderColor="border-primary"
             value={formData.email}
@@ -76,7 +76,7 @@ const Profile = () => {
             placeholder="Phone Number"
             inputType="text"
             labelColor="text-primary"
-            bgColor="bg-card"
+            bgColor="bg-background"
             textColor="text-primary"
             borderColor="border-primary"
             value={formData.phoneNumber}
@@ -91,7 +91,7 @@ const Profile = () => {
             value={formData.gender}
             label={"Gender*"}
             labelColor="text-primary"
-            bgColor="bg-card"
+            bgColor="bg-background"
             textColor="text-primary"
             borderColor="border-primary"
             defaultText={"Select Gender"}
@@ -103,7 +103,7 @@ const Profile = () => {
             value={formData.maritalStatus}
             label={"Marital Status*"}
             labelColor="text-primary"
-            bgColor="bg-card"
+            bgColor="bg-background"
             textColor="text-primary"
             borderColor="border-primary"
             defaultText={"Select Gender"}
@@ -118,7 +118,7 @@ const Profile = () => {
             label="Date of Birth*"
             inputType="date"
             labelColor="text-primary"
-            bgColor="bg-card"
+            bgColor="bg-background"
             textColor="text-primary"
             borderColor="border-primary"
             value={formData.dateOfBirth}
@@ -133,7 +133,7 @@ const Profile = () => {
             label="Address*"
             inputType="date"
             labelColor="text-primary"
-            bgColor="bg-card"
+            bgColor="bg-background"
             textColor="text-primary"
             borderColor="border-primary"
             value={formData.address}

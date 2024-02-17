@@ -165,12 +165,20 @@ function useProfile() {
     }
   };
 
+
+  const tabPayload = [
+    {profile:'Profile', default:true},
+    {next_of_kin:'Next of Kin', default:false},
+    {security:'Security', default:false}
+  ]
+
   useEffect(() => {
     dispatch(updateActivePage("profile"));
   }, []);
   return {
     handleSubmit,
     setFormData,
+    tabPayload,
     maritalStatus,
     gender,
     formData,

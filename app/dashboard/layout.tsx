@@ -3,7 +3,7 @@ import { SideBar, TopBar } from "@/app/components";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex bg-background">
+    <div className="flex bg-gradient-to-t to-background from-destructive-foreground">
       <div className="h-screen lg:w-72  ">
         <SideBar />
       </div>

@@ -5,10 +5,13 @@ import Image from "next/image";
 import {
   BarChartHorizontal,
   CandlestickChart,
+  LandPlot,
+  Pyramid,
   ScatterChart,
   Users,
 } from "lucide-react";
 import { CustomButton } from "@/app/components";
+import Link from "next/link";
 
 const Dashboard = () => {
   const {} = useDashboard();
@@ -31,6 +34,36 @@ const Dashboard = () => {
         </div>
       </div>
       {/* <hr className="border-t border-muted-foreground" /> */}
+      <div className=" flex flex-wrap gap-4 items-center justify-between mt-10 overflow-hidden bg-destructive-foreground shadow-md p-2 rounded-lg">
+        <Link href="/dashboard/buyProperty" className="animate__animated animate__fadeInUp animate__slow relative overflow-hidden inline-flex items-center bg-gradient-to-r from-card  to-destructive text-primary rounded-lg  flex-grow justify-between shadow">
+          <div className="relative text-lg font-bold px-5 text-destructive">
+            <div>Buy Property</div>
+          </div>
+          <div className="bg-gradient-to-l from-destructive p-3 rounded-lg h-full  text-2xl flex items-center justify-center font-extrabold">
+          <LandPlot className="h-10 w-10 text-muted  " />
+          </div>
+        </Link>
+
+
+        <Link href="/dashboard/buyLand" className="animate__animated animate__fadeInUp animate__fast relative overflow-hidden inline-flex items-center bg-gradient-to-r from-card  to-destructive text-primary rounded-lg  flex-grow justify-between shadow">
+          <div className="relative text-lg font-bold px-5 text-destructive">
+            <div>Buy Land</div>
+          </div>
+          <div className="bg-gradient-to-l from-destructive p-3 rounded-lg h-full  text-2xl flex items-center justify-center font-extrabold">
+          <Pyramid className="h-10 w-10 text-muted  " />
+          </div>
+        </Link>
+
+        <Link href="/dashboard/referrals" className="animate__animated animate__fadeInUp animate__faster relative overflow-hidden inline-flex items-center bg-gradient-to-r from-card  to-destructive text-primary rounded-lg  flex-grow justify-between shadow">
+          <div className="relative text-lg font-bold px-5 text-destructive">
+            <div>Referrals</div>
+          </div>
+          <div className=" bg-gradient-to-l from-destructive p-3 rounded-lg h-full  text-2xl flex items-center justify-center font-extrabold">
+          <Users className="h-10 w-10 text-muted  " />
+          </div>
+        </Link>
+      </div>
+
       <div className=" flex flex-wrap gap-4 items-center justify-between mt-10 overflow-hidden">
         <div className="animate__animated animate__fadeInRight animate__slow relative overflow-hidden inline-flex items-center bg-card text-primary rounded-lg p-2 flex-grow h-26">
           <div className="bg-secondary-foreground p-3 rounded-lg h-full w-1/3 text-2xl flex items-center justify-center font-extrabold">
@@ -42,14 +75,14 @@ const Dashboard = () => {
           <CandlestickChart className="h-28 w-28 text-muted absolute  bottom-0 right-0 -rotate-45" />
         </div>
 
-        <div className="animate__animated animate__fadeInRight animate__fast relative overflow-hidden inline-flex items-center bg-secondary-foreground text-primary rounded-lg p-2 flex-grow h-26">
-          <div className="bg-primary text-secondary p-3 h-full w-1/3 text-2xl flex items-center justify-center rounded-lg font-extrabold">
+        <div className="animate__animated animate__fadeInRight animate__fast relative overflow-hidden inline-flex items-center bg-card text-primary rounded-lg p-2 flex-grow h-26">
+          <div className="bg-secondary-foreground p-3 rounded-lg h-full w-1/3 text-2xl flex items-center justify-center font-extrabold">
             500
           </div>
-          <div className="relative z-10 text-lg font-bold px-5 text-secondary">
+          <div className="relative z-10 text-lg font-bold px-5 text-primary">
             <div>Total Property Costs</div>
           </div>
-          <ScatterChart className="h-28 w-28 text-card/10 absolute  bottom-0 right-0 -rotate-45" />
+          <ScatterChart className="h-28 w-28 text-muted absolute  bottom-0 right-0 -rotate-45" />
         </div>
 
         <div className="animate__animated animate__fadeInRight animate__faster relative overflow-hidden inline-flex items-center bg-card text-primary rounded-lg p-2 flex-grow h-26">
