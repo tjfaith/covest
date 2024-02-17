@@ -74,7 +74,8 @@ export interface ConfirmAlertProps {
 }
 
 export interface CustomTabProps{
-  tabItems:Record<string, string>[];
+  tabItems:Record<string, string>;
+  defaultItem:string
   action?: () => void;
 
 }

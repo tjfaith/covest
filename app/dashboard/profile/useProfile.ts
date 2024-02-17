@@ -166,11 +166,11 @@ function useProfile() {
   };
 
 
-  const tabPayload = [
-    {profile:'Profile', default:true},
-    {next_of_kin:'Next of Kin', default:false},
-    {security:'Security', default:false}
-  ]
+  const tabPayload = {
+    profile:'Profile',
+    next_of_kin:'Next of Kin',
+    security:'Security'
+  }
 
   useEffect(() => {
     dispatch(updateActivePage("profile"));

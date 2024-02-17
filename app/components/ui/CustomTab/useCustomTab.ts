@@ -2,8 +2,8 @@
 import { useState } from "react";
 import { CustomTabProps } from "@/app/functions/interface";
 
-function useCustomTab({tabItems}:CustomTabProps){
-    const [currentTab, setCurrentTab] = useState('profile')
+function useCustomTab({tabItems, defaultItem}:CustomTabProps){
+    const [currentTab, setCurrentTab] = useState(defaultItem)
 
     return {currentTab, setCurrentTab}
 }

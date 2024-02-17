@@ -6,7 +6,7 @@ const Profile = () => {
     const {tabPayload} = useProfile();
   return (
     <div>
-      {/* <CustomTab tabItems={tabPayload}/> */}
+      <CustomTab tabItems={tabPayload} defaultItem={'profile'} />
       <PersonalData/>
     </div>
   )
