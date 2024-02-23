@@ -5,7 +5,7 @@ import CustomButton from "../CustomButton";
 import useDynamicPage from "./useDynamicPage";
 
 import { PhoneOutgoing, Tag } from "lucide-react";
-import { BuyProperty, ContactRetailor } from "@/app/components";
+import { BuyNow, ContactRetailor } from "@/app/components";
 
 import "react-image-gallery/styles/css/image-gallery.css";
 
@@ -107,7 +107,7 @@ const PropertyDynamicPage = () => {
         </div>
       </div>
 
-      {showBuy && <BuyProperty setShowBuyProperty={setShowBuy}/>}
+      {showBuy && <BuyNow setShowBuyProperty={setShowBuy}/>}
     </div>
   );
 };

@@ -1,36 +1,24 @@
 "use client";
 import React, { Dispatch, SetStateAction } from "react";
-import useBuyProperty from "./useBuyProperty";
-import { Percent, Shapes, XCircle } from "lucide-react";
+import useInvestmentPrice from "./useInvestmentPrice";
+import {  Shapes } from "lucide-react";
 import { CustomButton, CustomInput } from "@/app/components";
 import Link from "next/link";
+import {BuyNow_SelectedItem } from "@/app/functions/types";
 
-interface BuyPropertyProps {
-  setShowBuyProperty: Dispatch<SetStateAction<boolean>>;
+interface InvestmentPriceProp{
+  setSelectedItem:Dispatch<SetStateAction<BuyNow_SelectedItem>>;
 }
-
-const BuyProperty = ({ setShowBuyProperty }: BuyPropertyProps) => {
+const InvestmentPrice = ({setSelectedItem}:InvestmentPriceProp) => {
   const { handleSubmit, setFormData, loading, formData, validateDetails } =
-    useBuyProperty();
+  useInvestmentPrice({setSelectedItem});
   return (
-    <div className=" inset-0 bg-black  bg-opacity-10 backdrop-blur-sm z-50 animate__animated animate__fadeIn animate__faster flex justify-center items-center  fixed h-screen w-screen px-4 top-0 bottom-0 right-0 left-0">
-      <div className="bg-background md:w-1/3 w-full  text-foreground p-5 rounded-md">
-        <div className="flex items-center justify-between">
-          <div className=" font-extrabold text-primary">
-            COvest by Pertinence
-          </div>
-          <XCircle
-            onClick={() => setShowBuyProperty(false)}
-            className=" cursor-pointer hover:text-destructive hover:shadow-md hover:shadow-primary  rounded-full ease-in-out duration-150"
-          />
-        </div>
-        <hr />
+
         <div className=" mt-5">
           <form onSubmit={handleSubmit}>
-            {/* First Name */}
             <div className="mb-4 flex gap-4 flex-col">
               <CustomInput
-                error={validateDetails?.fullName}
+                error={validateDetails?.noOfUnit}
                 icon={<Shapes className="w-4" />}
                 label="Number of Units*"
                 placeholder="Number of Units"
@@ -91,15 +79,13 @@ const BuyProperty = ({ setShowBuyProperty }: BuyPropertyProps) => {
                 bgColor="bg-red-500  to-accent-foreground"
                 type="button"
                 label={"Cancel"}
-                showLoading={loading}
                 handleClick={() => {}}
               />
             </div>
           </form>
         </div>
-      </div>
-    </div>
+     
   );
 };
 
-export default BuyProperty;
+export default InvestmentPrice;

@@ -1,133 +1,22 @@
-'use client'
+"use client";
 import { useEffect, useState } from "react";
-import {  useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateActivePage } from "@/app/Store/Features/settingsSlice";
-
 
 function useBuyLand() {
   const dispatch = useDispatch();
-const [currentPage, setCurrentPage] = useState(1);
+  const [currentTab, setCurrentTab] = useState("land_opportunities");
 
-  const properties = [
-    {
-      title: "4 Bedroom Duplex",
-      images: [
-        {
-          src: "/images/property_images/property.png",
-          caption: "",
-          featured_image: true,
-        },
-        {
-          src: "/images/property_images/property.png",
-          caption: "",
-          featured_image: false,
-        },
-      ],
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, eaque asperiores. Eius molestias quam odio reiciendis provident veritatis sit? Quod, aliquam? Minima iste recusandae vero quos sunt esse distinctio nam",
-      price: "4500",
-      currency: "naira",
-    },
-    {
-      title: "4 Bedroom Duplex",
-      images: [
-        {
-          src: "/images/property_images/property.png",
-          caption: "",
-          featured_image: true,
-        },
-        {
-          src: "/images/property_images/property.png",
-          caption: "",
-          featured_image: false,
-        },
-      ],
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, eaque asperiores. Eius molestias quam odio reiciendis provident veritatis sit? Quod, aliquam? Minima iste recusandae vero quos sunt esse distinctio nam",
-      price: "4500",
-      currency: "naira",
-    },
-    {
-      title: "4 Bedroom Duplex",
-      images: [
-        {
-          src: "/images/property_images/property.png",
-          caption: "",
-          featured_image: true,
-        },
-        {
-          src: "/images/property_images/property.png",
-          caption: "",
-          featured_image: false,
-        },
-      ],
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, eaque asperiores. Eius molestias quam odio reiciendis provident veritatis sit? Quod, aliquam? Minima iste recusandae vero quos sunt esse distinctio nam",
-      price: "4500",
-      currency: "naira",
-    },
-    {
-      title: "4 Bedroom Duplex",
-      images: [
-        {
-          src: "/images/property_images/property.png",
-          caption: "",
-          featured_image: true,
-        },
-        {
-          src: "/images/property_images/property.png",
-          caption: "",
-          featured_image: false,
-        },
-      ],
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, eaque asperiores. Eius molestias quam odio reiciendis provident veritatis sit? Quod, aliquam? Minima iste recusandae vero quos sunt esse distinctio nam",
-      price: "4500",
-      currency: "naira",
-    },
-    {
-      title: "4 Bedroom Duplex",
-      images: [
-        {
-          src: "/images/property_images/property.png",
-          caption: "",
-          featured_image: true,
-        },
-        {
-          src: "/images/property_images/property.png",
-          caption: "",
-          featured_image: false,
-        },
-      ],
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, eaque asperiores. Eius molestias quam odio reiciendis provident veritatis sit? Quod, aliquam? Minima iste recusandae vero quos sunt esse distinctio nam",
-      price: "4500",
-      currency: "naira",
-    },
-    {
-      title: "4 Bedroom Duplex",
-      images: [
-        {
-          src: "/images/property_images/property.png",
-          caption: "",
-          featured_image: true,
-        },
-        {
-          src: "/images/property_images/property.png",
-          caption: "",
-          featured_image: false,
-        },
-      ],
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, eaque asperiores. Eius molestias quam odio reiciendis provident veritatis sit? Quod, aliquam? Minima iste recusandae vero quos sunt esse distinctio nam",
-      price: "4500",
-      currency: "naira",
-    },
-  ];
+  const tabPayload = {
+    land_opportunities: "Opportunities",
+    my_lands: "My Lands",
+    land_payments: "Payments",
+  };
+
   useEffect(() => {
     dispatch(updateActivePage("buy_land"));
   }, []);
-  return { properties, currentPage, setCurrentPage };
+  return { tabPayload, currentTab, setCurrentTab };
 }
 
 export default useBuyLand;

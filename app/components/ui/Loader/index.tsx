@@ -3,7 +3,7 @@ import { LoaderProps } from "@/app/functions/interface";
 
 
 const Loader = ({
-  color = "white",
+  color = "green",
   loading = true,
   size = 6,
   fullScreen = false,

@@ -7,7 +7,6 @@ export { default as Signup } from "./Authentication/Signup";
 export { default as SocialLogin } from "./Authentication/SocialLogin";
 export { default as SideBar } from "./SideBar";
 export { default as TopBar } from "./TopBar";
-export { default as BuyProperty } from "./BuyNow/BuyProperty";
 
 // Home Component
 export { default as HomePage } from "./HomeComponents";
@@ -32,3 +31,18 @@ export { default as CustomTab } from "./ui/CustomTab";
 export { default as PersonalData } from "./Profile/PersonalData";
 export { default as NextOfKin } from "./Profile/NextOfKin";
 
+// Buy now
+export { default as BuyNow } from "./BuyNow";
+export { default as InvestmentPrice } from "./BuyNow/InvestmentPrice";
+export { default as SelectPayment } from "./BuyNow/SelectPayment";
+export { default as BankTransfer } from "./BuyNow/BankTransfer";
+
+// Properties
+export { default as Opportunities } from "./Properties/Opportunities";
+export { default as MyProperties } from "./Properties/MyProperties";
+export { default as Payments } from "./Properties/Payments";
+
+// Lands
+export { default as LandOpportunities } from "./Land/LandOpportunities";
+export { default as MyLands } from "./Land/MyLands";
+export { default as LandPayments } from "./Land/LandPayments";

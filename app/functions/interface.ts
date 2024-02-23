@@ -1,14 +1,5 @@
-type InputType =
-  | "text"
-  | "password"
-  | "email"
-  | "datetime"
-  | "date"
-  | "url"
-  | "number";
+import { ButtonType, IconPosition, InputType } from "@/app/functions/types";
 
-type IconPosition = "left" | "right";
-type ButtonType = "button" | "submit";
 
 export interface CustomInputProps {
   icon?: any;

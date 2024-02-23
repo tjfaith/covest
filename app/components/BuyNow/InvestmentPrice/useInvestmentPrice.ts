@@ -1,8 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
+import {BuyNow_SelectedItem } from "@/app/functions/types";
 
-function useBuyProperty() {
+interface InvestmentPriceProp{
+  setSelectedItem:Dispatch<SetStateAction<BuyNow_SelectedItem>>;
+}
+function useBuyProperty({setSelectedItem}:InvestmentPriceProp) {
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState("");
 
@@ -42,6 +46,8 @@ function useBuyProperty() {
     e.preventDefault();
     if (handleValidation()) {
       setLoading(true);
+      setSelectedItem('selected-payment')
+      setLoading(false)
     }
   };
   return { handleSubmit,setFormData, formData, validateDetails,loading };
