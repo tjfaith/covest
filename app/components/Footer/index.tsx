@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
           <ul className="flex flex-wrap gap-5 items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
             <li className="hover:border-secondary hover:border-b-2 transition-all ease-in-out duration-300">
-              <Link href="#about" >
+              <Link href="/#about" >
                 About
               </Link>
             </li>
@@ -30,7 +30,7 @@ const Footer = () => {
               </Link>
             </li>
             <li className="hover:border-secondary hover:border-b-2 transition-all ease-in-out duration-300">
-              <Link href="#contact_us" >
+              <Link href="/#contact_us" >
                 Contact
               </Link>
             </li>
