@@ -12,7 +12,7 @@ interface AuthenticationProps {
 const Authentication = ({ setShowAuthentication }: AuthenticationProps) => {
   const [showLogin, setShowLogin] = useState(true);
   return (
-    <div className=" inset-0 bg-secondary/50 bg-opacity-10 backdrop-blur-lg z-20 animate__animated animate__fadeIn animate__faster flex justify-center px-5 items-center  fixed h-screen w-screen top-0 bottom-0 right-0 left-0">
+    <div className=" inset-0 bg-black bg-opacity-30 backdrop-blur-md z-20 animate__animated animate__fadeIn animate__faster flex justify-center px-5 items-center  fixed h-screen w-screen top-0 bottom-0 right-0 left-0">
       <div className="  min-h-70-screen  lg:w-70-screen bg-primary flex items-center">
         <div className="flex-grow hidden lg:flex flex-col items-center w-1/2 p-10   h-full">
           <div className="text-primary-foreground font-bold text-xl mb-8">

@@ -1,9 +1,10 @@
+const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-const inter = Inter({ subsets: ["latin"] });
 import { Providers } from "@/app/Store/provider";
+import { Footer, Header } from "@/app/components";
 
 export const metadata: Metadata = {
   title: "Covest",
@@ -27,7 +28,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Providers>{children}</Providers>
+          <Providers>
+
+            {children}
+          </Providers>
         </ThemeProvider>
       </body>
     </html>

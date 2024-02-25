@@ -9,7 +9,7 @@ const Banner = () => {
   const { showAuthentication, setShowAuthentication } = useBanner();
 
   return (
-    <div className=" overflow-x-hidden flex flex-col gap-5 md:flex-row w-full bg-background  pt-24 lg:pt-44 h-screen justify-between items-center px-5 lg:px-32">
+    <div className=" overflow-x-hidden flex flex-col gap-5 md:flex-row w-full bg-background   justify-between items-center px-5 lg:px-32">
       <div>
         <h1 className=" text-2xl lg:text-6xl w-full lg:w-7/12  font-bold ">
           <span className="text-primary animate__animated animate__fadeInDown animate__slow">

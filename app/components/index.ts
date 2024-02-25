@@ -9,8 +9,9 @@ export { default as SideBar } from "./SideBar";
 export { default as TopBar } from "./TopBar";
 
 // Home Component
-export { default as HomePage } from "./HomeComponents";
 export { default as Banner } from "./HomeComponents/Banner";
+export { default as About } from "./HomeComponents/About";
+export { default as ContactUs } from "./HomeComponents/ContactUs";
 
 
 // UI
