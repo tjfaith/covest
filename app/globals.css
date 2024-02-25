@@ -146,6 +146,10 @@
   }
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 /* Styling the main scrollbar */
 ::-webkit-scrollbar {
   width: 12px; 

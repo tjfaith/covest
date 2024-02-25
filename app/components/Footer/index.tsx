@@ -30,7 +30,7 @@ const Footer = () => {
               </Link>
             </li>
             <li className="hover:border-secondary hover:border-b-2 transition-all ease-in-out duration-300">
-              <Link href="#" >
+              <Link href="#contact_us" >
                 Contact
               </Link>
             </li>

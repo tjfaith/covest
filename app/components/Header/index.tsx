@@ -43,7 +43,14 @@ const Header = () => {
               <Link href={"/"}> Home</Link>
             </li>
             <li className=" hover:border-secondary hover:border-b-2 transition-all ease-in-out duration-300 cursor-pointer">
+             <Link href="#about">
               About
+              </Link>
+            </li>
+            <li className=" hover:border-secondary hover:border-b-2 transition-all ease-in-out duration-300 cursor-pointer">
+            <Link href="#contact_us" className="whitespace-nowrap">
+              Contact Us
+              </Link>
             </li>
           </ul>
           <span className=" hidden md:block">|</span>
