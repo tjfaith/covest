@@ -88,4 +88,5 @@ export interface LoaderProps {
   loading?: boolean;
   size?: number;
   fullScreen?: boolean;
+  background?:string;
 }

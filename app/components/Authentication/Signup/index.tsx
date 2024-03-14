@@ -4,40 +4,53 @@ import useLogin from "./useSignup";
 import { CustomInput, CustomButton } from "@/app/components";
 import { AtSign, KeyRound, XCircle } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface SignupProps {
   setShowLogin: Dispatch<SetStateAction<boolean>>;
+  setSuccessfulMessage: Dispatch<SetStateAction<string>>;
 }
 
-const Signup = ({ setShowLogin }: SignupProps) => {
+const Signup = ({ setShowLogin, setSuccessfulMessage }: SignupProps) => {
   const {
-    loginDetails,
+    signUpDetails,
     validateDetails,
     feedbackMessage,
     isChecked,
     loading,
     setIsChecked,
-    setLoginDetails,
+    setSignUpDetails,
     handleSignup,
-  } = useLogin();
+  } = useLogin({setShowLogin,setSuccessfulMessage });
   return (
-    <form
+    <div>
+   <form
       className="space-y-5 h-full animate__animated animate__bounceIn  "
       onSubmit={(e) => handleSignup(e)}
     >
       <div className="text-red-500 text-sm">{feedbackMessage}</div>
 
       <CustomInput
-        error={validateDetails.username}
+        error={validateDetails.email}
         icon={<AtSign />}
         label="Email*"
         placeholder="youremail@domain.com"
         inputType="email"
-        value={loginDetails.username}
+        value={signUpDetails.email}
         handleChange={(value: string) =>
-          setLoginDetails({ ...loginDetails, username: value })
+          setSignUpDetails({ ...signUpDetails, email: value })
         }
       />
+
+
+      <div className=" text-xs">
+       <div className=" text-red-500 font-bold"> Password Must contain at least one:</div>
+        <ul className=" flex gap-5 font-extrabold mb-3">
+          <li className={`${/[A-Z]/.test(signUpDetails.password)?'text-primary':'text-red-400'}`}>Uppercase</li>
+          <li className={`${/[a-z]/.test(signUpDetails.password)?'text-primary':'text-red-400'}`}>Lowercase</li>
+          <li className={`${/[^\w\s]/.test(signUpDetails.password)?'text-primary':'text-red-400'}`}>Symbol</li>
+          <li className={`${/\d/.test(signUpDetails.password)?'text-primary':'text-red-400'}`}>Number</li>
+        </ul>
       <CustomInput
         error={validateDetails.password}
         icon={<KeyRound />}
@@ -45,23 +58,26 @@ const Signup = ({ setShowLogin }: SignupProps) => {
         isPassword
         inputType="password"
         placeholder="***********"
-        value={loginDetails.password}
+        value={signUpDetails.password}
         handleChange={(value: string) =>
-          setLoginDetails({ ...loginDetails, password: value })
+          setSignUpDetails({ ...signUpDetails, password: value })
         }
-      />
+        />
+        <div>
+          </div>
       <CustomInput
-        error={validateDetails.password}
+        error={validateDetails.confirmPassword}
         icon={<KeyRound />}
         label="Confirm Password*"
         isPassword
         inputType="password"
         placeholder="***********"
-        value={loginDetails.password}
+        value={signUpDetails.confirmPassword}
         handleChange={(value: string) =>
-          setLoginDetails({ ...loginDetails, password: value })
+          setSignUpDetails({ ...signUpDetails, confirmPassword: value })
         }
-      />
+        />
+        </div>
           <div className=" flex md:flex-nowrap flex-wrap justify-between md:items-center text-sm font-medium gap-3">
         <div className="flex items-center justify-between space-x-2">
           <input
@@ -84,11 +100,9 @@ const Signup = ({ setShowLogin }: SignupProps) => {
           showLoading={loading}
           label={"Signup"}
           type="submit"
-          // bgColor="bg-background/50"
           handleClick={() => {}}
         />
         <CustomButton
-          showLoading={loading}
           label={"Login"}
           type="button"
           bgColor="bg-foreground/50"
@@ -97,7 +111,8 @@ const Signup = ({ setShowLogin }: SignupProps) => {
           }}
         />
       </div>
-    </form>
+          </form>
+    </div>
   );
 };
 

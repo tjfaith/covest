@@ -1,16 +1,30 @@
 "use client";
 
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import Image from "next/image";
-import { Login, Signup } from "@/app/components";
-import { XCircle } from "lucide-react";
+import {
+  Login,
+  ResendActivationLink,
+  Signup,
+  SocialLogin,
+} from "@/app/components";
+import { X, XCircle } from "lucide-react";
+import useAuthentication from "./useAuthentication";
 
-interface AuthenticationProps {
-  setShowAuthentication: Dispatch<SetStateAction<boolean>>;
-}
 
-const Authentication = ({ setShowAuthentication }: AuthenticationProps) => {
-  const [showLogin, setShowLogin] = useState(true);
+
+const Authentication = () => {
+  const {
+    showResendLink,
+    showLogin,
+    successfulMessage,
+    resendActivationLink,
+    handleToggleAuth,
+    setResendActivationLink,
+    toggleResendLink,
+    setShowLogin,
+    setSuccessfulMessage,
+  } = useAuthentication();
   return (
     <div className=" inset-0 bg-black bg-opacity-30 backdrop-blur-md z-20 animate__animated animate__fadeIn animate__faster flex justify-center px-5 items-center  fixed h-screen w-screen top-0 bottom-0 right-0 left-0">
       <div className="  min-h-70-screen  lg:w-70-screen bg-primary flex items-center">
@@ -45,21 +59,50 @@ const Authentication = ({ setShowAuthentication }: AuthenticationProps) => {
               {showLogin ? <span>Login</span> : <span>Signup</span>}
             </div>
             <XCircle
-              onClick={() => setShowAuthentication(false)}
+              onClick={() => handleToggleAuth(false)}
               className=" cursor-pointer hover:text-destructive hover:shadow-md hover:shadow-primary  rounded-full ease-in-out duration-150"
             />
           </div>
-          <div className=" px-10 min-h-70-screen flex items-center justify-center pb-3 w-full">
+          <div className=" px-10 min-h-70-screen flex items-center justify-center pb-3 w-full relative">
             <div className="w-full">
+              {successfulMessage !== "" && (
+                <div>
+                  <div className="text-primary bg-primary/10 p-2 rounded-sm">
+                    {successfulMessage}
+                  </div>
+                </div>
+              )}
+                  {showResendLink && (
+                    <small
+                      className=" text-xs underline text-red-500 cursor-pointer "
+                      onClick={() => setResendActivationLink(true)}
+                    >
+                      Resend activation link
+                    </small>
+                  )}
+              {resendActivationLink && (
+                <div className="absolute inset-0 z-20 bg-black bg-opacity-50 p-10 flex items-center justify-center">
+                  <div className="bg-white p-5">
+                    <div className="flex items-center justify-end">
+                      <X
+                        className="cursor-pointer"
+                        onClick={() => setResendActivationLink(false)}
+                      />
+                    </div>
+                    <ResendActivationLink setResendActivationLink={setResendActivationLink}/>
+                  </div>
+                </div>
+              )}
               {showLogin ? (
                 <Login setShowLogin={setShowLogin} />
               ) : (
-                <Signup setShowLogin={setShowLogin} />
+                <Signup
+                  setShowLogin={setShowLogin}
+                  setSuccessfulMessage={setSuccessfulMessage}
+                />
               )}
               <div className="text-primary text-center w-full my-2">or</div>
-              <button className="bg-primary hover:bg-primary/70 hover:text-white transition-all ease-in-out duration-200 text-primary-foreground font-bold py-2 px-4 w-full ">
-                Continue&nbsp;with&nbsp;Google
-              </button>
+              <SocialLogin />
             </div>
           </div>
         </div>

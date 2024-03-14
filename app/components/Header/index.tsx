@@ -8,7 +8,7 @@ import { Authentication } from "@/app/components";
 import Link from "next/link";
 
 const Header = () => {
-  const { showAuthentication, showNav, setShowNav, setShowAuthentication } =
+  const { showAuth, showNav, setShowNav, handleToggleAuth } =
     useHeader();
   return (
     <div className={`flex flex-col md:flex-row justify-between gap-10 md:gap-0 items-center px-5 lg:px-32 py-4 fixed w-full text-secondary-foreground  bg-opacity-80 backdrop-blur-lg z-20`}>
@@ -56,13 +56,13 @@ const Header = () => {
           <span className=" hidden md:block">|</span>
           <button
             className="hover:border-secondary hover:border-b-2 transition-all ease-in-out duration-300 cursor-pointer whitespace-nowrap"
-            onClick={() => setShowAuthentication(true)}
+            onClick={() => handleToggleAuth(true)}
           >
             Sign In
           </button>
           <button
             className="bg-primary text-primary-foreground flex items-center space-x-3 p-2"
-            onClick={() => setShowAuthentication(true)}
+            onClick={() => handleToggleAuth(true)}
           >
             <span className=" md:text-base font-bold text-xs">
               Start&nbsp;Investing
@@ -71,8 +71,8 @@ const Header = () => {
           </button>
         </div>
       </div>
-      {showAuthentication && (
-        <Authentication setShowAuthentication={setShowAuthentication} />
+      {showAuth && (
+        <Authentication />
       )}
     </div>
   );

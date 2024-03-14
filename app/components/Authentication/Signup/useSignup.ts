@@ -1,33 +1,40 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { AuthServices } from "@/app/api";
 
-function useSignup() {
+interface SignupProps {
+  setShowLogin: Dispatch<SetStateAction<boolean>>;
+  setSuccessfulMessage: Dispatch<SetStateAction<string>>;
+}
+
+function useSignup({ setShowLogin, setSuccessfulMessage }: SignupProps) {
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [isChecked, setIsChecked] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  const [loginDetails, setLoginDetails] = useState({
-    username: "",
+  const [signUpDetails, setSignUpDetails] = useState({
+    email: "",
     password: "",
+    confirmPassword: "",
   });
 
   const [validateDetails, setValidateDetails] = useState({
-    username: false,
+    email: false,
     password: false,
+    confirmPassword: false,
   });
 
   const handleValidation = () => {
     let validated = 0;
-    if (loginDetails.username === "") {
+    if (signUpDetails.email === "") {
       setValidateDetails((prevVal) => ({
         ...prevVal,
-        username: true,
+        email: true,
       }));
       validated += 1;
     }
 
-    if (loginDetails.password === "") {
+    if (signUpDetails.password === "") {
       setValidateDetails((prevVal) => ({
         ...prevVal,
         password: true,
@@ -35,10 +42,23 @@ function useSignup() {
       validated += 1;
     }
 
+    if (
+      signUpDetails.password !== "" &&
+      signUpDetails.password !== signUpDetails.confirmPassword
+    ) {
+      setValidateDetails((prevVal) => ({
+        ...prevVal,
+        confirmPassword: true,
+      }));
+      validated += 1;
+    }
+
     if (validated == 0) {
       return true;
     } else {
-      setFeedbackMessage("Fill all required felid");
+      validateDetails.confirmPassword
+        ? setFeedbackMessage("Password did not match")
+        : setFeedbackMessage("Fill all required felid");
       return false;
     }
   };
@@ -46,31 +66,69 @@ function useSignup() {
   const resetValidation = () => {
     setValidateDetails({
       ...validateDetails,
-      username: false,
+      email: false,
       password: false,
     });
     setFeedbackMessage("");
   };
 
-  const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (handleValidation()) {
       setLoading(true);
+      const {confirmPassword, ...rest} = signUpDetails
+      await AuthServices()
+        .signup(rest)
+        .then(
+          (response) => {
+            console.log(response);
+            setShowLogin(true);;
+            setSuccessfulMessage('Account created successfully, check your email to verify your account')
+            setLoading(false);
+          },
+          (error) => {
+            console.log(error);
+            error.response.data.error?  
+            setFeedbackMessage(error.response.data.error):
+            setFeedbackMessage(error.response.data.message)
+
+            ;
+            setLoading(false);
+          }
+        );
     }
   };
 
   useEffect(() => {
     resetValidation();
-  }, [loginDetails, resetValidation]);
+  }, [signUpDetails]);
 
+  useEffect(() => {
+    if (
+      signUpDetails.password !== "" &&
+      signUpDetails.password !== signUpDetails.confirmPassword
+    ) {
+      setValidateDetails((prevVal) => ({
+        ...prevVal,
+        confirmPassword: true,
+      }));
+      setFeedbackMessage("Password did not match");
+    } else {
+      setValidateDetails((prevVal) => ({
+        ...prevVal,
+        confirmPassword: false,
+      }));
+      setFeedbackMessage("");
+    }
+  }, [signUpDetails.password, signUpDetails.confirmPassword]);
   return {
-    loginDetails,
+    signUpDetails,
     validateDetails,
     feedbackMessage,
     isChecked,
     loading,
     setIsChecked,
-    setLoginDetails,
+    setSignUpDetails,
     handleSignup,
   };
 }

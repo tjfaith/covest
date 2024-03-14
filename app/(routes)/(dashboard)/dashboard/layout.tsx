@@ -1,5 +1,7 @@
+'use client'
 import React from "react";
 import { SideBar, TopBar } from "@/app/components";
+import middleware from "@/app/functions/middleware";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -15,4 +17,4 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default layout;
+export default middleware(layout);

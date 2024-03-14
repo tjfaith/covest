@@ -1,28 +1,37 @@
 'use client'
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation'
+import { AuthServices, LocalStorageServices } from "@/app/api";
+import { updateShowResendLink } from "@/app/Store/Features/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/app/Store";
+import toast from "react-hot-toast";
+
 function useLogin() {
   const router = useRouter();
+  const dispatch = useDispatch();
+  const { showResendLink } = useSelector((state: RootState) => state.auth);
+
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [isChecked, setIsChecked] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
   const [loginDetails, setLoginDetails] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
   const [validateDetails, setValidateDetails] = useState({
-    username: false,
+    email: false,
     password: false,
   });
 
   const handleValidation = () => {
     let validated = 0;
-    if (loginDetails.username === "") {
+    if (loginDetails.email === "") {
       setValidateDetails((prevVal) => ({
         ...prevVal,
-        username: true,
+        email: true,
       }));
       validated += 1;
     }
@@ -46,7 +55,7 @@ function useLogin() {
   const resetValidation = () => {
     setValidateDetails({
       ...validateDetails,
-      username: false,
+      email: false,
       password: false,
     });
     setFeedbackMessage("");
@@ -56,7 +65,25 @@ function useLogin() {
     e.preventDefault();
     if (handleValidation()) {
       setLoading(true);
-      router.push('/dashboard');
+      AuthServices().login(loginDetails).then(response=>{
+        console.log(response, 'response...')
+        // router.push('/dashboard');
+
+        LocalStorageServices().setLocalAccessToken( response.data.data.token);
+
+        toast.success(response.data.message)
+
+
+
+        setLoading(false)
+      }, error=>{
+        console.log(error)
+        setFeedbackMessage(error.response.data.message)
+        if (error.response.data.message ==='Account is pending approval.'){
+          dispatch(updateShowResendLink(true))
+        }
+        setLoading(false)
+      })
     }
   };
 

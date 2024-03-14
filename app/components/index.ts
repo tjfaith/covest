@@ -1,10 +1,10 @@
-export { default as ModeToggle } from "./ModeToggle";
 export { default as Header } from "./Header";
 export { default as Footer } from "./Footer";
 export { default as Authentication } from "./Authentication";
 export { default as Login } from "./Authentication/Login";
 export { default as Signup } from "./Authentication/Signup";
 export { default as SocialLogin } from "./Authentication/SocialLogin";
+export { default as ResendActivationLink}  from "./Authentication/ResendActivationLink"
 export { default as SideBar } from "./SideBar";
 export { default as TopBar } from "./TopBar";
 

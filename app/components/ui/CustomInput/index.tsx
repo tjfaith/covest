@@ -58,7 +58,7 @@ const CustomInput = ({
             />
           )}
         </div>
-        {inputType == "password" && !error && (
+        {inputType == "password" && (
           <div
             className="flex cursor-pointer text-primary"
             onClick={() => setCanSee(!canSee)}

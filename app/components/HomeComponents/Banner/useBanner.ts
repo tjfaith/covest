@@ -1,10 +1,16 @@
 'use client'
+import { toggleAuth } from "@/app/Store/Features/authSlice";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 function useBanner(){
-  const [showAuthentication, setShowAuthentication] = useState(false);
+  const dispatch = useDispatch()
+  const handleToggleAuth=(val:boolean)=>{
+    dispatch(toggleAuth(val))
+  }
 
-    return { showAuthentication, setShowAuthentication };
+
+    return { handleToggleAuth };
 }
 
 export default useBanner

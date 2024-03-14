@@ -11,13 +11,16 @@ interface AuthState {
   user: User | null;
   isAuthenticated: boolean;
   forgottenPassword:boolean;
+  showResendLink:boolean;
+  showAuth:boolean;
 }
 
 const initialState: AuthState = {
   user: null,
   isAuthenticated: false,
   forgottenPassword:false,
-
+  showResendLink:false,
+  showAuth:false,
 };
 
 const authSlice = createSlice({
@@ -40,8 +43,14 @@ const authSlice = createSlice({
     setForgottenPassword: (state, action: PayloadAction<boolean>) => {
       state.forgottenPassword = action.payload;
     },
+    updateShowResendLink:(state, action:PayloadAction <boolean>)=>{
+      state.showResendLink = action.payload
+    },
+    toggleAuth:(state, action:PayloadAction <boolean>)=>{
+      state.showAuth = action.payload
+    },
   },
 });
 
-export const { login, logout, updateUser, setForgottenPassword } = authSlice.actions;
+export const { login, logout, updateUser,updateShowResendLink, setForgottenPassword, toggleAuth } = authSlice.actions;
 export default authSlice.reducer;

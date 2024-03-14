@@ -1,9 +1,10 @@
 "use client";
-import React, { Dispatch, SetStateAction } from "react";
+import Link from "next/link";
 import useLogin from "./useLogin";
+import React, { Dispatch, SetStateAction } from "react";
 import { CustomInput, CustomButton } from "@/app/components";
 import { AtSign, KeyRound } from "lucide-react";
-import Link from "next/link";
+
 
 interface LoginProps {
   setShowLogin: Dispatch<SetStateAction<boolean>>;
@@ -30,14 +31,14 @@ const Login = ({ setShowLogin }: LoginProps) => {
       <div className="text-red-500 text-sm">{feedbackMessage}</div>
 
       <CustomInput
-        error={validateDetails.username}
+        error={validateDetails.email}
         icon={<AtSign />}
         label="Email*"
         placeholder="youremail@domain.com"
         inputType="email"
-        value={loginDetails.username}
+        value={loginDetails.email}
         handleChange={(value: string) =>
-          setLoginDetails({ ...loginDetails, username: value })
+          setLoginDetails({ ...loginDetails, email: value })
         }
       />
       <CustomInput

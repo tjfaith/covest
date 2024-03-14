@@ -2,11 +2,10 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import { Authentication } from "@/app/components";
 import useBanner from "./useBanner";
 
 const Banner = () => {
-  const { showAuthentication, setShowAuthentication } = useBanner();
+  const { handleToggleAuth } = useBanner();
 
   return (
     <div className=" overflow-x-hidden flex flex-col gap-5 md:flex-row w-full bg-background   justify-between items-center px-5 lg:px-32">
@@ -24,7 +23,7 @@ const Banner = () => {
         </p>
         <button
           className="bg-primary text-primary-foreground mt-4 flex items-center space-x-3 p-2"
-          onClick={() => setShowAuthentication(true)}
+          onClick={() => handleToggleAuth(true)}
         >
           <span className=" md:text-base font-bold">Start Investing</span>{" "}
           <ArrowRight />
@@ -61,9 +60,7 @@ const Banner = () => {
           />
         </div>
       </div>
-      {showAuthentication && (
-        <Authentication setShowAuthentication={setShowAuthentication} />
-      )}
+    
     </div>
   );
 };
