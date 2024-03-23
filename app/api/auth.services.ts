@@ -1,57 +1,46 @@
-import api from './api.services';
+import api from "./api.services";
 function AuthServices() {
+  const signup = (signUpData: Record<string, string>) => {
+    return api.post("/auth/signup", signUpData);
+  };
 
-	const signup = (signUpData: Record<string, string>) => {
-		console.log(signUpData, 'SIGNUP DATA...')
-		return api.post('/auth/signup', signUpData);
-	};
+  const login = (loginData: Record<string, string>) => {
+    return api.post("/auth/login", loginData);
+  };
 
-	const login = (loginData: Record<string, string>) => {
-		return api.post('/auth/login', loginData);
-	};
+  const resendActivationToken = (email: string) => {
+    return api.post("/auth/resend-activation-token", { email });
+  };
 
-	const resendActivationToken = (email: string) => {
-		return api.post('/auth/resend-activation-token', { email });
-	};
+  const verifyEmail = (token: string) => {
+    return api.get(`/auth/verify-email/${token}`);
+  };
 
-	const verifyEmail = (token:string)=>{
-		return api.get(`/auth/verify-email/${token}`)
-	}
+  const initiateForgotPassword = (email: string) => {
+    return api.post("/auth/initiate-forgot-password", { email });
+  };
 
+  const resetPassword = (payload: Record<string, string | null>) => {
+    return api.post("/auth/reset-password", payload);
+  };
 
+  const updatePassword = (payload: Record<string, string>) => {
+    return api.post("/auth/update-password", payload);
+  };
 
-	const googleLogin = (idToken: string) => {
-		return api.post('/user/google-login', { idToken });
-	};
+  const googleAuth = (idToken: string) => {
+    return api.post("/auth/google-auth", { idToken });
+  };
 
-
-	const forgotPassword = (email: string) => {
-		return api.post('/user/forgot-password', { email });
-	};
-
-	const resetPassword = (payload: Record<string, string | undefined>, token: string) => {
-		return api.patch('/user/reset-password/' + token, payload);
-	};
-
-	const sendOTPUser = (purpose:string)=>{
-		return api.post('/user/sendOTPUser',{purpose});
-
-	};
-
-	const logout = () => {
-		localStorage.clear();
-	};
-
-	return {
-		googleLogin,
-		sendOTPUser,
-		login,
-		signup,
-		logout,
-		resendActivationToken,
-		verifyEmail,
-		forgotPassword,
-		resetPassword,
-	};
+  return {
+    signup,
+    login,
+    resendActivationToken,
+    verifyEmail,
+    initiateForgotPassword,
+    resetPassword,
+    updatePassword,
+    googleAuth,
+  };
 }
 export default AuthServices;

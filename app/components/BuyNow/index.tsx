@@ -31,7 +31,7 @@ const BuyNow = ({ setShowBuyProperty }: BuyPropertyProps) => {
         </div>
         <hr />
         {selectedItem === "investment-price" && (
-          <InvestmentPrice setSelectedItem={setSelectedItem} />
+          <InvestmentPrice setSelectedItem={setSelectedItem} setShowBuyProperty={setShowBuyProperty}/>
         )}
         {selectedItem === "selected-payment" && <SelectPayment setSelectedItem={setSelectedItem}  />}
         {selectedItem === "bank-transfer" && <BankTransfer/>}

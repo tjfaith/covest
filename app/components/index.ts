@@ -1,12 +1,15 @@
 export { default as Header } from "./Header";
 export { default as Footer } from "./Footer";
+export { default as SideBar } from "./SideBar";
+export { default as TopBar } from "./TopBar";
+
+// Auth Component
 export { default as Authentication } from "./Authentication";
 export { default as Login } from "./Authentication/Login";
 export { default as Signup } from "./Authentication/Signup";
 export { default as SocialLogin } from "./Authentication/SocialLogin";
 export { default as ResendActivationLink}  from "./Authentication/ResendActivationLink"
-export { default as SideBar } from "./SideBar";
-export { default as TopBar } from "./TopBar";
+export { default as ForgotPassword} from "./Authentication/ForgotPassword"
 
 // Home Component
 export { default as Banner } from "./HomeComponents/Banner";

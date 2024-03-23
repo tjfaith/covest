@@ -9,7 +9,7 @@ interface SelectPaymentProp{
 
 
 const SelectPayment = ({setSelectedItem}:SelectPaymentProp) => {
-  const {selectedCheckbox, loading,changePaymentMethod,  setSelectedCheckbox} = useSelectPayment({setSelectedItem})
+  const {selectedCheckbox, loading,propertyPaymentDetails,initiateTransfer,changePaymentMethod,  setSelectedCheckbox} = useSelectPayment({setSelectedItem})
   return (
     <div className="mt-3">
       <div className=" space-y-4">
@@ -19,7 +19,7 @@ const SelectPayment = ({setSelectedItem}:SelectPaymentProp) => {
           </div>
           <div className="bg-muted border-b border-primary px-3 py-1 text-primary flex space-x-2 items-center">
             <div>&#8358;</div>
-            <div>{(200000).toLocaleString()}</div>
+            <div>{(propertyPaymentDetails.totalAmountPayable).toLocaleString()}</div>
           </div>
         </div>
 
@@ -53,11 +53,11 @@ const SelectPayment = ({setSelectedItem}:SelectPaymentProp) => {
         <div className="mt-6 inline-flex md:flex-row flex-col items-center gap-3 w-full">
               <CustomButton
                 bgColor="bg-primary"
-                type="submit"
+                type="button"
                 label={"Proceed"}
                 customStyle="whitespace-nowrap"
                 showLoading={loading}
-                handleClick={() => {}}
+                handleClick={initiateTransfer}
               />
 
               {/* <CustomButton

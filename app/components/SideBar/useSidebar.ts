@@ -54,6 +54,7 @@ function useSidebar() {
 
  }
   const handleLogout=()=>{
+    localStorage.clear()
     router.push('/');
   }
 

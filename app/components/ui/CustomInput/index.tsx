@@ -17,6 +17,8 @@ const CustomInput = ({
   textColor = "text-primary",
   bgColor = "bg-background",
   borderColor ='border-primary',
+  customStyle="",
+  disableInput=false,
   handleChange,
 }: CustomInputProps) => {
   const { canSee, setCanSee } = useCustomInput();
@@ -40,18 +42,20 @@ const CustomInput = ({
         <div className="flex w-full">
           {inputType == "password" ? (
             <input
+            disabled={disableInput}
               autoComplete=""
               placeholder={placeholder}
-              className={`${textColor} ${bgColor} border-none ml-2 w-full outline-none`}
+              className={`${textColor} ${bgColor} ${customStyle} border-none ml-2 w-full outline-none`}
               type={!canSee ? "password" : "text"}
               value={value}
               onChange={(e) => handleChange(e.target.value)}
             />
           ) : (
             <input
+              disabled={disableInput}
               autoComplete=""
               placeholder={placeholder}
-              className={`${textColor} ${bgColor} border-none ml-2  w-full outline-none`}
+              className={`${textColor} ${bgColor} ${customStyle} border-none ml-2  w-full outline-none`}
               type={inputType}
               value={value}
               onChange={(e) => handleChange(e.target.value)}

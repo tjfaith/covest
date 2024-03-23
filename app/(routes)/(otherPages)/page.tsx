@@ -9,7 +9,7 @@ export default function Home() {
     AOS.init();
   }, []);
   return (
-    <div className="">
+    <div className="pt-24">
       <Banner />
       <About />
       <ContactUs />

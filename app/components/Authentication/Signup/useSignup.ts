@@ -82,7 +82,7 @@ function useSignup({ setShowLogin, setSuccessfulMessage }: SignupProps) {
         .then(
           (response) => {
             console.log(response);
-            setShowLogin(true);;
+            setShowLogin(true);
             setSuccessfulMessage('Account created successfully, check your email to verify your account')
             setLoading(false);
           },

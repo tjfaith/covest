@@ -3,35 +3,34 @@ import React from "react";
 import Image from "next/image";
 import useOpportunities from "./useOpportunities";
 import Link from "next/link";
-import { Pagination } from "@/app/components";
+import { Loader, Pagination } from "@/app/components";
 
 const Opportunities = () => {
-  const { properties, currentPage, setCurrentPage } = useOpportunities();
+  const { properties, currentPage, itemsPerPage, totalItem,loading, setCurrentPage } =
+    useOpportunities();
 
   return (
+    <>
+   { loading ? <Loader fullScreen size={100} color="white"/>:
+   <>
+   {properties.length >0 ?
     <div>
       <div className="flex flex-wrap gap-10 mb-10">
         {properties.map((val: any, index: number) => (
           <Link
-            href={`/dashboard/buyProperty/${index}`}
+            href={`/dashboard/buyProperty/${val.id}`}
             key={index}
             className=" w-full max-w-xs flex-shrink-0  rounded overflow-hidden border border-border transition-all duration-200 ease-in-out hover:shadow-lg"
           >
-            <div className="   h-56 w-full ">
-              {val.images.map((img: Record<string, string>, index: number) => (
-                <React.Fragment key={index}>
-                  {img.featured_image && (
-                    <Image
-                      src={img.src}
-                      alt="feature image"
-                      className="w-full h-full object-cover"
-                      width={200}
-                      height={200}
-                      priority={false}
-                    />
-                  )}
-                </React.Fragment>
-              ))}
+            <div className="h-56 w-full ">
+              <Image
+                src={JSON.parse(val.images)[0].url}
+                alt="feature image"
+                className="w-full h-full object-cover object-top"
+                width={200}
+                height={200}
+                priority={false}
+              />
             </div>
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2 text-primary">
@@ -54,12 +53,20 @@ const Opportunities = () => {
       </div>
 
       <Pagination
-        totalItem={500}
+        totalItem={totalItem}
         currentPage={currentPage}
-        itemsPerPage={8}
+        itemsPerPage={itemsPerPage}
         setCurrentPage={setCurrentPage}
       />
+    </div>:
+    <div className="text-primary font-bold uppercase text-center h-screen-60 flex items-center justify-center">
+      No Property found, please check back later 
     </div>
+
+}
+</>
+}
+   </>
   );
 };
 

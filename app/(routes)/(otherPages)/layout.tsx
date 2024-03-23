@@ -7,7 +7,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
       <Header />
-      <div className="pt-24">
+      <div className="min-h-screen">
       {/* <button onClick={notify}>Make me a toast</button> */}
       {children}
       </div>

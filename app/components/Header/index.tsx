@@ -2,19 +2,18 @@
 import Image from "next/image";
 import React from "react";
 import useHeader from "./useHeader";
-
 import { ArrowRight, Menu, X } from "lucide-react";
 import { Authentication } from "@/app/components";
 import Link from "next/link";
 
 const Header = () => {
-  const { showAuth, showNav, setShowNav, handleToggleAuth } =
+  const { showAuth, showNav,isLogin, router, setShowNav, handleToggleAuth } =
     useHeader();
   return (
     <div className={`flex flex-col md:flex-row justify-between gap-10 md:gap-0 items-center px-5 lg:px-32 py-4 fixed w-full text-secondary-foreground  bg-opacity-80 backdrop-blur-lg z-20`}>
       <div className=" w-full flex justify-between items-center">
 
-      <div className="flex items-center font-bold space-x-3 text-xl  ">
+      <Link href="/" className="flex items-center font-bold space-x-3 text-xl  ">
         <Image
           src={"/logo.png"}
           width={50}
@@ -23,7 +22,7 @@ const Header = () => {
           className="animate__animated animate__rotateIn animate__slower"
         />
         <div>COvest</div>
-      </div>
+      </Link>
       <div
         className=" cursor-pointer w-10 md:hidden flex items-center justify-center bg-primary text-primary-foreground rounded-lg p-2"
         onClick={() => setShowNav(!showNav)}
@@ -53,16 +52,16 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          <span className=" hidden md:block">|</span>
+         {!isLogin && <> <span className=" hidden md:block">|</span>
           <button
             className="hover:border-secondary hover:border-b-2 transition-all ease-in-out duration-300 cursor-pointer whitespace-nowrap"
             onClick={() => handleToggleAuth(true)}
           >
             Sign In
-          </button>
+          </button></>}
           <button
             className="bg-primary text-primary-foreground flex items-center space-x-3 p-2"
-            onClick={() => handleToggleAuth(true)}
+            onClick={() => !isLogin ? handleToggleAuth(true): router.push('/dashboard') }
           >
             <span className=" md:text-base font-bold text-xs">
               Start&nbsp;Investing

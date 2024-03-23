@@ -5,8 +5,8 @@ import { Facebook, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-background  ">
-      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <footer className="bg-muted ">
+      <div className="w-full max-w-screen-xl mx-auto px-4 py-2">
         <div className="sm:flex sm:items-center sm:justify-between">
           <div className="flex items-center font-bold space-x-3 text-xl  ">
             <Image
@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="w-full bg-primary p-4 text-center text-neutral-700 dark:text-neutral-200">
+        <div className="w-full bg-primary p-4 text-center text-white">
           © {new Date().getFullYear()} Copyright:
           <Link href="/" className="hover:underline">
             COvest™

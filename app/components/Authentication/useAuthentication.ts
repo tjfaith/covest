@@ -1,12 +1,12 @@
 "use client";
-import { toggleAuth, updateShowResendLink } from "@/app/Store/Features/authSlice";
+import { setForgottenPassword, toggleAuth, updateShowResendLink } from "@/app/Store/Features/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/app/Store";
 import { useState } from "react";
 
 function useAuthentication() {
   const dispatch = useDispatch();
-  const { showResendLink } = useSelector((state: RootState) => state.auth);
+  const { showResendLink, forgottenPassword } = useSelector((state: RootState) => state.auth);
   const [showLogin, setShowLogin] = useState(true);
   const [successfulMessage, setSuccessfulMessage] = useState("");
   const [resendActivationLink, setResendActivationLink] = useState(false)
@@ -25,6 +25,7 @@ function useAuthentication() {
     showLogin,
     successfulMessage,
     resendActivationLink,
+    forgottenPassword,
     handleToggleAuth,
     setResendActivationLink,
     toggleResendLink,

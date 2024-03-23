@@ -2,7 +2,7 @@ import React from "react";
 
 const Terms = () => {
   return (
-    <div className="min-h-screen px-5 lg:px-32">
+    <div className="min-h-screen px-5 lg:px-32 pt-24">
       <div className=" text-center ">
         <div className=" text-4xl font-bold pt-5 flex-col inline-flex items-end  text-primary">
           <div>Terms and Conditions for COvest Africa</div>

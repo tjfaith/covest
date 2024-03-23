@@ -5,7 +5,7 @@ import React from "react";
 import useBanner from "./useBanner";
 
 const Banner = () => {
-  const { handleToggleAuth } = useBanner();
+  const { handleToggleAuth, router,isLogin } = useBanner();
 
   return (
     <div className=" overflow-x-hidden flex flex-col gap-5 md:flex-row w-full bg-background   justify-between items-center px-5 lg:px-32">
@@ -23,7 +23,7 @@ const Banner = () => {
         </p>
         <button
           className="bg-primary text-primary-foreground mt-4 flex items-center space-x-3 p-2"
-          onClick={() => handleToggleAuth(true)}
+          onClick={() => !isLogin ? handleToggleAuth(true): router.push('/dashboard') }
         >
           <span className=" md:text-base font-bold">Start Investing</span>{" "}
           <ArrowRight />

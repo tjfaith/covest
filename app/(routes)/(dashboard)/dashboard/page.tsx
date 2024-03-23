@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { CustomButton } from "@/app/components";
 import Link from "next/link";
+import { Toaster } from "react-hot-toast";
 
 const Dashboard = () => {
   const {} = useDashboard();
@@ -159,6 +160,7 @@ const Dashboard = () => {
           <p className="text-yellow-500 text-xs mt-1">1 day ago</p>
         </div>
       </div>
+      <Toaster/>
     </div>
   );
 };

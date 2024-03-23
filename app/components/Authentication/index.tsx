@@ -3,6 +3,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 import {
+  ForgotPassword,
   Login,
   ResendActivationLink,
   Signup,
@@ -11,17 +12,15 @@ import {
 import { X, XCircle } from "lucide-react";
 import useAuthentication from "./useAuthentication";
 
-
-
 const Authentication = () => {
   const {
     showResendLink,
     showLogin,
     successfulMessage,
     resendActivationLink,
+    forgottenPassword,
     handleToggleAuth,
     setResendActivationLink,
-    toggleResendLink,
     setShowLogin,
     setSuccessfulMessage,
   } = useAuthentication();
@@ -72,14 +71,15 @@ const Authentication = () => {
                   </div>
                 </div>
               )}
-                  {showResendLink && (
-                    <small
-                      className=" text-xs underline text-red-500 cursor-pointer "
-                      onClick={() => setResendActivationLink(true)}
-                    >
-                      Resend activation link
-                    </small>
-                  )}
+              {showResendLink && (
+                <small
+                  className=" text-xs underline text-red-500 cursor-pointer "
+                  onClick={() => setResendActivationLink(true)}
+                >
+                  Resend activation link
+                </small>
+              )}
+
               {resendActivationLink && (
                 <div className="absolute inset-0 z-20 bg-black bg-opacity-50 p-10 flex items-center justify-center">
                   <div className="bg-white p-5">
@@ -89,10 +89,15 @@ const Authentication = () => {
                         onClick={() => setResendActivationLink(false)}
                       />
                     </div>
-                    <ResendActivationLink setResendActivationLink={setResendActivationLink}/>
+                    <ResendActivationLink
+                      setResendActivationLink={setResendActivationLink}
+                    />
                   </div>
                 </div>
               )}
+
+              {forgottenPassword && <ForgotPassword />}
+
               {showLogin ? (
                 <Login setShowLogin={setShowLogin} />
               ) : (

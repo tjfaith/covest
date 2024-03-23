@@ -3,7 +3,7 @@ import React from "react";
 import { SideBar, TopBar } from "@/app/components";
 import middleware from "@/app/functions/middleware";
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex bg-gradient-to-t to-background from-destructive-foreground">
       <div className="h-screen lg:w-72  ">
@@ -17,4 +17,4 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default middleware(layout);
+export default middleware(Layout);

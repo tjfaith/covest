@@ -37,7 +37,7 @@ const Pagination = ({
                 <button
                   onClick={() => handleUpdatePage(Number(val))}
                   className={`${
-                    val === currentPage && "bg-secondary rounded-lg text-foreground"
+                    val === currentPage && "bg-white rounded-lg text-foreground"
                   }  p-3  w-10 h-10 `}
                   key={index}
                 >

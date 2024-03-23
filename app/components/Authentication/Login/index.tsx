@@ -18,6 +18,7 @@ const Login = ({ setShowLogin }: LoginProps) => {
     isChecked,
     loading,
     showSignUp,
+    toggleForgotPassword,
     setShowSignUp,
     setIsChecked,
     setLoginDetails,
@@ -63,12 +64,12 @@ const Login = ({ setShowLogin }: LoginProps) => {
           />
           <span className="text-primary">Keep me logged in</span>
         </div>
-        <Link
-          href={"/reset_password"}
+        <div
+        onClick={()=>toggleForgotPassword(true)}
           className=" underline cursor-pointer text-primary "
         >
           Forgot Password?
-        </Link>
+        </div>
       </div>
       <div className="flex md:flex-row flex-col item-center justify-between gap-3">
         <CustomButton

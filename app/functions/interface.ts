@@ -15,6 +15,8 @@ export interface CustomInputProps {
   textColor?: string;
   bgColor?: string;
   borderColor?: string;
+  customStyle?:string;
+  disableInput?:boolean;
   handleChange: (e: string) => void;
 }
 
@@ -89,4 +91,26 @@ export interface LoaderProps {
   size?: number;
   fullScreen?: boolean;
   background?:string;
+}
+
+export type PropertyType = 'general' | 'land';
+
+export interface PropertyInstance {
+  id?:string;
+  property_id?: string;
+  images_to_delete?: string[] | undefined;
+  title?: string | undefined;
+  description?: string | undefined;
+  price?: string | number | undefined;
+  images?: any;
+  property_type?: PropertyType | undefined;
+  property_details?: string;
+  retailer_id?: string | undefined;
+};
+
+export interface PropertyPaymentDetails{
+  noOfUnit:number;
+  totalAmountPayable:number
+  estimateROI:number
+  propertyId:string
 }

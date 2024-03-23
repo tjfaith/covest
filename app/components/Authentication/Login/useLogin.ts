@@ -1,8 +1,8 @@
 'use client'
 import { useEffect, useState } from "react";
-import { useRouter } from 'next/navigation'
+import { useRouter, redirect } from 'next/navigation'
 import { AuthServices, LocalStorageServices } from "@/app/api";
-import { updateShowResendLink } from "@/app/Store/Features/authSlice";
+import { setForgottenPassword, toggleAuth, updateShowResendLink } from "@/app/Store/Features/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/app/Store";
 import toast from "react-hot-toast";
@@ -66,16 +66,13 @@ function useLogin() {
     if (handleValidation()) {
       setLoading(true);
       AuthServices().login(loginDetails).then(response=>{
-        console.log(response, 'response...')
-        // router.push('/dashboard');
-
+        
         LocalStorageServices().setLocalAccessToken( response.data.data.token);
 
         toast.success(response.data.message)
-
-
-
+        dispatch(toggleAuth(false))
         setLoading(false)
+        router.push('/dashboard');
       }, error=>{
         console.log(error)
         setFeedbackMessage(error.response.data.message)
@@ -86,6 +83,10 @@ function useLogin() {
       })
     }
   };
+
+  const toggleForgotPassword =(val:boolean)=>{
+    dispatch(setForgottenPassword(val))
+  }
 
   useEffect(() => {
     resetValidation();
@@ -98,6 +99,7 @@ function useLogin() {
     isChecked,
     loading,
     showSignUp,
+    toggleForgotPassword,
     setShowSignUp,
     setIsChecked,
     setLoginDetails,
