@@ -18,6 +18,7 @@ const CustomInput = ({
   bgColor = "bg-background",
   borderColor ='border-primary',
   customStyle="",
+  maxValue,
   disableInput=false,
   handleChange,
 }: CustomInputProps) => {
@@ -57,6 +58,7 @@ const CustomInput = ({
               placeholder={placeholder}
               className={`${textColor} ${bgColor} ${customStyle} border-none ml-2  w-full outline-none`}
               type={inputType}
+              max={inputType === 'number' ? maxValue : undefined}
               value={value}
               onChange={(e) => handleChange(e.target.value)}
             />

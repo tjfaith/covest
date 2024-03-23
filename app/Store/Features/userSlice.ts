@@ -17,7 +17,6 @@ const userSlice = createSlice({
   reducers: {
     updateLoggedInUser: (state, action: PayloadAction<Record<string, string | number | boolean>>) => {
       state.loggedInUser = action.payload;
-      console.log( action.payload, 'USER..')
     },
   
   },

@@ -40,13 +40,11 @@ function useResendActivationLink({setResendActivationLink}:Props) {
     if (handleValidation()) {
       setLoading(true);
       AuthServices().resendActivationToken(email).then(response=>{
-        console.log(response)
         setResendActivationLink(false)
         toast.success(response.data.message)
       setLoading(false);
 
       }, error=>{
-        console.log(error)
         toast.error(error.response.data.error?error.response.data.error : error.response.data.message)
         setErrorMessage(error.response.data.error?error.response.data.error : error.response.data.message)
         setValidateEmail(true)

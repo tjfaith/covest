@@ -30,7 +30,6 @@ function useOpportunities() {
       setTotalItem(response.data.data.pagination.totalItems)
        setLoading(false)
     }, error=>{
-      console.log(error)
       setLoading(false)
     })
   }

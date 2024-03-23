@@ -74,7 +74,6 @@ function useLogin() {
         setLoading(false)
         router.push('/dashboard');
       }, error=>{
-        console.log(error)
         setFeedbackMessage(error.response.data.message)
         if (error.response.data.message ==='Account is pending approval.'){
           dispatch(updateShowResendLink(true))

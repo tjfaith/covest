@@ -8,12 +8,15 @@ import { PhoneOutgoing, Tag } from "lucide-react";
 import { BuyNow, ContactRetailor, Loader } from "@/app/components";
 
 import "react-image-gallery/styles/css/image-gallery.css";
+import { Toaster } from "react-hot-toast";
 
 const PropertyDynamicPage = () => {
   const { images, details, showBuy,loading,router, setShowBuy } = useDynamicPage();
 
   return (
     <>
+      <Toaster/>
+
     { loading ? <Loader fullScreen size={100} color="white"/>:
     <div className=" ">
       <div className="flex w-full justify-between md:flex-row flex-col md:gap-10">
@@ -42,10 +45,11 @@ const PropertyDynamicPage = () => {
               </span>
             </div>
             <div className="mt-2 inline-block md:self-end">
-              <CustomButton
+             {details.total_units_sold >= details.total_units ? <div className="font-bold text-red-500">UNITS SOLD OUT</div> :
+               <CustomButton
                 label={"BUY PROPERTY"}
                 handleClick={() => setShowBuy(true)}
-              />
+              />}
             </div>
           </div>
           <hr />

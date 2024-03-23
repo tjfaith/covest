@@ -51,14 +51,15 @@ const SelectPayment = ({setSelectedItem}:SelectPaymentProp) => {
         </div>
 
         <div className="mt-6 inline-flex md:flex-row flex-col items-center gap-3 w-full">
-              <CustomButton
+             {selectedCheckbox === 'payOnlineCheckbox' && <CustomButton
                 bgColor="bg-primary"
+                
                 type="button"
                 label={"Proceed"}
                 customStyle="whitespace-nowrap"
                 showLoading={loading}
                 handleClick={initiateTransfer}
-              />
+              />}
 
               {/* <CustomButton
                 bgColor="bg-red-500  to-accent-foreground"

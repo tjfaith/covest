@@ -18,6 +18,8 @@ const Dashboard = () => {
   const {} = useDashboard();
   return (
     <div>
+      <Toaster/>
+
       <div className="flex items-center justify-between mb-5">
         <div className="font-extrabold text-primary">Dashboard</div>
         <div className="flex items-center text-primary">
@@ -160,7 +162,6 @@ const Dashboard = () => {
           <p className="text-yellow-500 text-xs mt-1">1 day ago</p>
         </div>
       </div>
-      <Toaster/>
     </div>
   );
 };

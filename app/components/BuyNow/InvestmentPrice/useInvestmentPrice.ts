@@ -1,26 +1,26 @@
 "use client";
 
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
-import {BuyNow_SelectedItem } from "@/app/functions/types";
+import { BuyNow_SelectedItem } from "@/app/functions/types";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/app/Store";
 import { updatePropertyPaymentDetails } from "@/app/Store/Features/propertySlice";
 
-interface InvestmentPriceProp{
-  setSelectedItem:Dispatch<SetStateAction<BuyNow_SelectedItem>>;
+interface InvestmentPriceProp {
+  setSelectedItem: Dispatch<SetStateAction<BuyNow_SelectedItem>>;
 }
-function useBuyProperty({setSelectedItem}:InvestmentPriceProp) {
+function useBuyProperty({ setSelectedItem }: InvestmentPriceProp) {
   const { selectedProperty, propertyPaymentDetails } = useSelector(
     (state: RootState) => state.property
   );
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState("");
-
   const [loading, setLoading] = useState(false);
-
+  const [unitRemaining, setUnitRemaining] = useState(0)
+  const maximumUnit = Number(selectedProperty.total_units) -Number(selectedProperty.total_units_sold)
   const [formData, setFormData] = useState(propertyPaymentDetails);
 
   const [validateDetails, setValidateDetails] = useState<Record<
@@ -28,14 +28,21 @@ function useBuyProperty({setSelectedItem}:InvestmentPriceProp) {
     boolean
   > | null>(null);
 
-  const computeROI = (noOfUnit:number)=>{
-    const total_amount = noOfUnit * Number(selectedProperty.price) | 0
+  const computeROI = (noOfUnit: number) => {
+    if(noOfUnit <= maximumUnit){
+    
+    const total_amount = (noOfUnit * Number(selectedProperty.price)) | 0;
 
-    const roi = total_amount * 25/100
-    const total_return  = total_amount + roi 
-    setFormData({...formData, noOfUnit, totalAmountPayable: total_amount, estimateROI:total_return})
+    const roi = (total_amount * 25) / 100;
+    const total_return = total_amount + roi;
+    setFormData({
+      ...formData,
+      noOfUnit,
+      totalAmountPayable: total_amount,
+      estimateROI: total_return,
+    });
   }
-
+  };
 
   const handleValidation = () => {
     let validated = 0;
@@ -47,7 +54,7 @@ function useBuyProperty({setSelectedItem}:InvestmentPriceProp) {
       validated += 1;
     }
 
-    if(acceptTerms ===false){
+    if (acceptTerms === false) {
       setValidateDetails((prevVal) => ({
         ...prevVal,
         terms: true,
@@ -67,16 +74,40 @@ function useBuyProperty({setSelectedItem}:InvestmentPriceProp) {
     e.preventDefault();
     if (handleValidation()) {
       setLoading(true);
-      setSelectedItem('selected-payment')
-      dispatch(updatePropertyPaymentDetails({...formData, propertyId:selectedProperty.id as string}))
-      setLoading(false)
+      setSelectedItem("selected-payment");
+      dispatch(
+        updatePropertyPaymentDetails({
+          ...formData,
+          propertyId: selectedProperty.id as string,
+        })
+      );
+      setLoading(false);
     }
   };
 
+  const sumUnitRemaining = () => {
+    setUnitRemaining(Number(selectedProperty.total_units)  - (Number(selectedProperty.total_units_sold)  + formData.noOfUnit) )
+  };
+  useEffect(() => {
+    setValidateDetails(null);
+  }, [formData, acceptTerms]);
+
   useEffect(()=>{
-    setValidateDetails(null)
-  },[formData, acceptTerms] )
-  return { handleSubmit,setFormData,computeROI,setAcceptTerms, acceptTerms, formData, validateDetails,loading };
+    sumUnitRemaining()
+  }, [formData.noOfUnit])
+  return {
+    handleSubmit,
+    setFormData,
+    computeROI,
+    setAcceptTerms,
+    maximumUnit,
+    unitRemaining,
+    selectedProperty,
+    acceptTerms,
+    formData,
+    validateDetails,
+    loading,
+  };
 }
 
 export default useBuyProperty;

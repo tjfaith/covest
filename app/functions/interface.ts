@@ -17,6 +17,7 @@ export interface CustomInputProps {
   borderColor?: string;
   customStyle?:string;
   disableInput?:boolean;
+  maxValue?:number
   handleChange: (e: string) => void;
 }
 
@@ -96,6 +97,8 @@ export interface LoaderProps {
 export type PropertyType = 'general' | 'land';
 
 export interface PropertyInstance {
+  total_units_sold?:number;
+  total_units?: number;
   id?:string;
   property_id?: string;
   images_to_delete?: string[] | undefined;

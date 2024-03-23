@@ -9,7 +9,6 @@ import toast from "react-hot-toast";
 function useSocialLogin(){
     const router = useRouter()
 const GOOGLE_LOGIN_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_LOGIN_CLIENT_ID;
-console.log(GOOGLE_LOGIN_CLIENT_ID, 'ID')
 const [showLoading, setShowLoading] = useState(false)
 
 const googleSignUpSuccess = (credentialResponse: CredentialResponse) => {
@@ -19,7 +18,6 @@ const googleSignUpSuccess = (credentialResponse: CredentialResponse) => {
     AuthServices().googleAuth(googleIdToken).then(
         (response) => {
             setShowLoading(false);
-            console.log(response)
             if (response.status == 200) {
                 // const user_info = { ...response.data.user_info, id: response.data.id };
                 // LocalStorageServices.setLocalAccessToken(response.data.AccessToken);
@@ -36,7 +34,6 @@ const googleSignUpSuccess = (credentialResponse: CredentialResponse) => {
             }
         },
         (error) => {
-            console.log(error)
             // if (error.response.data.error) {
             //     toast.error(error.response.data.error, {
             //         progressClassName: 'bg-red-500 h-1',

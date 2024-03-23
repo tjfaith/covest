@@ -43,7 +43,6 @@ function useResendActivationLink() {
             setLoading(false);
           },
           (error) => {
-            console.log(error);
             toast.error(
               error.response.data.error
                 ? error.response.data.error

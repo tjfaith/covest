@@ -9,6 +9,7 @@ import { toggleSideBar } from "@/app/Store/Features/settingsSlice";
 import { useDispatch } from "react-redux";
 import { UserServices } from "@/app/api";
 import { updateLoggedInUser } from "@/app/Store/Features/userSlice";
+import toast from "react-hot-toast";
 
 function useSidebar() {
   const router = useRouter();
@@ -63,8 +64,8 @@ function useSidebar() {
   const getUserData = async ()=>{
     await UserServices().userData().then(response=>{
       dispatch(updateLoggedInUser(response.data))
-    }, error=>{
-      console.log(error)
+    }, ()=>{
+      toast.error('An error occurred, please try again')
     })
   }
 

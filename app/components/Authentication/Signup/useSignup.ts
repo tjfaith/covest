@@ -81,13 +81,11 @@ function useSignup({ setShowLogin, setSuccessfulMessage }: SignupProps) {
         .signup(rest)
         .then(
           (response) => {
-            console.log(response);
             setShowLogin(true);
             setSuccessfulMessage('Account created successfully, check your email to verify your account')
             setLoading(false);
           },
           (error) => {
-            console.log(error);
             error.response.data.error?  
             setFeedbackMessage(error.response.data.error):
             setFeedbackMessage(error.response.data.message)

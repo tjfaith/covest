@@ -11,12 +11,18 @@ interface InvestmentPriceProp {
   setShowBuyProperty: Dispatch<SetStateAction<boolean>>;
 }
 
-const InvestmentPrice = ({ setSelectedItem, setShowBuyProperty }: InvestmentPriceProp) => {
+const InvestmentPrice = ({
+  setSelectedItem,
+  setShowBuyProperty,
+}: InvestmentPriceProp) => {
   const {
     handleSubmit,
     setFormData,
     computeROI,
     setAcceptTerms,
+    maximumUnit,
+    unitRemaining,
+    selectedProperty,
     acceptTerms,
     loading,
     formData,
@@ -24,7 +30,10 @@ const InvestmentPrice = ({ setSelectedItem, setShowBuyProperty }: InvestmentPric
   } = useInvestmentPrice({ setSelectedItem });
   return (
     <div className=" mt-5">
-      <form onSubmit={handleSubmit}>
+      <div>Units Remaining : {unitRemaining}</div>
+
+      <hr />
+      <form className="mt-4" onSubmit={handleSubmit}>
         <div className="mb-4 flex gap-4 flex-col">
           <CustomInput
             error={validateDetails?.noOfUnit}
@@ -36,6 +45,7 @@ const InvestmentPrice = ({ setSelectedItem, setShowBuyProperty }: InvestmentPric
             bgColor="bg-background"
             textColor="text-primary"
             borderColor="border-primary"
+            maxValue={maximumUnit}
             value={String(formData.noOfUnit)}
             handleChange={(value: string) => computeROI(Number(value))}
           />
@@ -56,7 +66,12 @@ const InvestmentPrice = ({ setSelectedItem, setShowBuyProperty }: InvestmentPric
             </div>
           </div>
 
-          <div className={`space-x-2 ${validateDetails?.terms && 'text-red-500 animate__animated animate__shakeX'}`}>
+          <div
+            className={`space-x-2 ${
+              validateDetails?.terms &&
+              "text-red-500 animate__animated animate__shakeX"
+            }`}
+          >
             <input
               type="checkbox"
               checked={acceptTerms}
@@ -91,7 +106,6 @@ const InvestmentPrice = ({ setSelectedItem, setShowBuyProperty }: InvestmentPric
             type="button"
             label={"Cancel"}
             handleClick={() => setShowBuyProperty(false)}
-            
           />
         </div>
       </form>
