@@ -9,18 +9,10 @@ import { updateLoggedInUser } from "@/app/Store/Features/userSlice";
 function useDashboard() {
   const dispatch = useDispatch();
 
-  const getUserData = async ()=>{
-    await UserServices().userData().then(response=>{
-      console.log(response.data, 'user data')
-      dispatch(updateLoggedInUser(response.data))
-    }, error=>{
-      console.log(error)
-    })
-  }
+
 
   useEffect(() => {
     dispatch(updateActivePage("dashboard"));
-    getUserData()
   }, []);
   return {};
 }

@@ -3,10 +3,12 @@ import { LandPlot, LayoutDashboard, Pyramid, Users } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import { RootState } from "@/app/Store";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import { toggleSideBar } from "@/app/Store/Features/settingsSlice";
 import { useDispatch } from "react-redux";
+import { UserServices } from "@/app/api";
+import { updateLoggedInUser } from "@/app/Store/Features/userSlice";
 
 function useSidebar() {
   const router = useRouter();
@@ -57,7 +59,18 @@ function useSidebar() {
     localStorage.clear()
     router.push('/');
   }
+  
+  const getUserData = async ()=>{
+    await UserServices().userData().then(response=>{
+      dispatch(updateLoggedInUser(response.data))
+    }, error=>{
+      console.log(error)
+    })
+  }
 
+  useEffect(() => {
+    getUserData()
+  }, [getUserData]);
   return { navMenu, activePage, confirmLogout,showSideBar, hideMenu, handleChangePage,handleLogout, setConfirmLogout };
 }
 
