@@ -59,7 +59,7 @@ const InvestmentPrice = ({
           </div>
 
           <div>
-            <div className="text-primary mb-2">Estimated ROI</div>
+            <div className="text-primary mb-2">Estimated ROI Annually</div>
             <div className="bg-muted border-b border-primary px-3 py-1 text-primary flex space-x-2 items-center">
               <div>&#8358;</div>
               <div>{formData.estimateROI.toLocaleString()}</div>

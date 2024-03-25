@@ -32,7 +32,9 @@ const Opportunities = () => {
                   >
                     <div className="bg-white text-foreground px-3 py-2">
                       {val.total_units_sold >= val.total_units ? (
-                        <div className="text-red-500 font-bold">Property Units Sold out</div>
+                        <div className="text-red-500 font-bold">
+                          Property Units Sold out
+                        </div>
                       ) : (
                         <div>
                           <span className="font-bold">Units: </span>
@@ -52,22 +54,26 @@ const Opportunities = () => {
                         priority={false}
                       />
                     </div>
-                    <div className="px-3 py-4">
-                      <div className="font-bold text-xl mb-2 text-primary">
+                    <div>
+                      <div className="font-bold text-xl mb-2 px-3 pt-4 text-primary">
                         {val.title}
                       </div>
-                      <p className="text-foreground text-base">
+                      <p className="text-foreground text-base px-3 pb-3">
                         {val.description.length > 100
                           ? val.description.slice(0, 100) + "..."
                           : val.description}
                       </p>
+                      <div className="bg-muted p-4 shadow">
+                        <div className="text-foreground font-extrabold text-3xl tracking-widest">
+                          &#8358;{val.price.toLocaleString()}
+                        </div>
+                        <div className="text-primary font-bold">
+                          Guaranteed {val.roi}% Annually{" "}
+                        </div>
+                      </div>
+                     
                     </div>
-                    <div className="px-6 py-4">
-                      <span className="inline-block bg-muted rounded-full px-3 py-1 text-sm font-semibold text-foreground mr-2">
-                        {val.currency == "naira" && <span>&#8358;</span>}
-                        {Number(val.price).toLocaleString()}
-                      </span>
-                    </div>
+
                   </Link>
                 ))}
               </div>

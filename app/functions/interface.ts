@@ -109,6 +109,7 @@ export interface PropertyInstance {
   property_type?: PropertyType | undefined;
   property_details?: string;
   retailer_id?: string | undefined;
+  roi?:number
 };
 
 export interface PropertyPaymentDetails{

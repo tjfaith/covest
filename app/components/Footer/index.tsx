@@ -14,7 +14,7 @@ const Footer = () => {
               width={50}
               height={50}
               alt="site logo"
-              className="animate__animated animate__rotateIn animate__slower"
+              className="animate__animated animate__rotateIn animate__slower w-auto h-auto"
             />
             <div>COvest</div>
           </div>

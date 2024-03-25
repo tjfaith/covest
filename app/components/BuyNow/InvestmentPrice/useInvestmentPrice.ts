@@ -29,11 +29,12 @@ function useBuyProperty({ setSelectedItem }: InvestmentPriceProp) {
   > | null>(null);
 
   const computeROI = (noOfUnit: number) => {
+    console.log(selectedProperty, 'selected property')
     if(noOfUnit <= maximumUnit){
     
     const total_amount = (noOfUnit * Number(selectedProperty.price)) | 0;
 
-    const roi = (total_amount * 25) / 100;
+    const roi = (total_amount * (selectedProperty?.roi ?? 0)) / 100;
     const total_return = total_amount + roi;
     setFormData({
       ...formData,

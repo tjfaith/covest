@@ -15,7 +15,7 @@ import Link from "next/link";
 import { Toaster } from "react-hot-toast";
 
 const Dashboard = () => {
-  const {} = useDashboard();
+  const {loggedInUser} = useDashboard();
   return (
     <div>
       <Toaster/>
@@ -32,7 +32,7 @@ const Dashboard = () => {
           />
           <span>Hello</span>{" "}
           <span className=" font-extrabold  ml-1">
-            {"Tejiri"}
+            {loggedInUser.first_name && loggedInUser.first_name}
           </span>
         </div>
       </div>

@@ -41,7 +41,7 @@ const SideBar = () => {
             width={30}
             height={30}
             alt="site logo"
-            className="animate__animated animate__rotateIn animate__slower"
+            className="animate__animated animate__rotateIn animate__slower w-auto h-auto"
           />
           <div className="text-primary-foreground">COvest</div>
         </Link>

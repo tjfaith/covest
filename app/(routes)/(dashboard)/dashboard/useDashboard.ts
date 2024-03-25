@@ -1,20 +1,21 @@
 'use client'
 import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateActivePage } from "@/app/Store/Features/settingsSlice";
-import { UserServices } from "@/app/api";
-import { updateLoggedInUser } from "@/app/Store/Features/userSlice";
+import { RootState } from "@/app/Store";
 
 
 function useDashboard() {
   const dispatch = useDispatch();
-
+  const {loggedInUser} = useSelector(
+    (state: RootState) => state.user
+  );
 
 
   useEffect(() => {
     dispatch(updateActivePage("dashboard"));
   }, []);
-  return {};
+  return {loggedInUser};
 }
 
 export default useDashboard;
