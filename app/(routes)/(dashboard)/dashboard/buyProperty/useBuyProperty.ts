@@ -12,7 +12,6 @@ function useBuyProperty() {
   const tabPayload = {
     opportunities: "Opportunities",
     my_properties: "My Properties",
-    payments: "Payments",
   };
 
 

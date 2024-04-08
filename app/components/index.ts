@@ -44,7 +44,6 @@ export { default as BankTransfer } from "./BuyNow/BankTransfer";
 // Properties
 export { default as Opportunities } from "./Properties/Opportunities";
 export { default as MyProperties } from "./Properties/MyProperties";
-export { default as Payments } from "./Properties/Payments";
 
 // Lands
 export { default as LandOpportunities } from "./Land/LandOpportunities";

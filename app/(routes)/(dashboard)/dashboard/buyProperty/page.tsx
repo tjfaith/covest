@@ -6,7 +6,6 @@ import {
   MyProperties,
   Opportunities,
   Pagination,
-  Payments,
 } from "@/app/components";
 import useBuyProperty from "./useBuyProperty";
 const BuyProperty = () => {
@@ -20,7 +19,6 @@ const BuyProperty = () => {
       />
       {currentTab === "opportunities" && <Opportunities />}
       {currentTab === "my_properties" && <MyProperties />}
-      {currentTab === "payments" && <Payments />}
     </div>
   );
 };

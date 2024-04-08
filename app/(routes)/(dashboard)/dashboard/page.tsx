@@ -111,14 +111,14 @@ const Dashboard = () => {
               earn 45% Return of Investment
             </span>
           </div>
-          <div className="">
+          <Link href="/dashboard/buyLand">
             <CustomButton
               label={"Proceed"}
               handleClick={function (): void {
                 throw new Error("Function not implemented.");
               }}
             />
-          </div>
+          </Link>
         </div>
         <div className=" relative overflow-hidden inline-flex items-center bg-card text-primary rounded-lg p-2 flex-grow h-26">
           <div className="bg-primary text-primary-foreground p-3 rounded-lg h-full w-1/3 text-2xl flex items-center justify-center font-extrabold">
