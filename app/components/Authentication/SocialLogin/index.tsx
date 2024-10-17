@@ -13,9 +13,11 @@ const SocialLogin = () => {
   return (
     <GoogleOAuthProvider clientId={GOOGLE_LOGIN_CLIENT_ID as string}>
       <GoogleLogin
-        theme="outline"
+        theme="filled_black"
         text="continue_with"
         ux_mode="popup"
+        type="standard"
+        logo_alignment="center"
         onSuccess={(credentialResponse) => {
           googleSignUpSuccess(credentialResponse);
         }}
